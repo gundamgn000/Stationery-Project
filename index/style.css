@@ -694,5 +694,92 @@ body { font-family: 'Noto Sans TC', sans-serif; background-color: #f7f7f7; color
     .footer-column li {
         font-size: 12px;
     }
+
+    /* =========================
+   手機版 商品卡片優化
+========================= */
+@media (max-width: 768px) {
+
+    /* 讓卡片變 2 欄（現在你是 3 欄） */
+    .featured-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+    }
+
+    /* 卡片整體縮矮 */
+    .product-card {
+        border-radius: 12px;
+    }
+
+    /* 圖片高度降低 */
+    .card-img-wrapper img {
+        height: 160px;
+    }
+
+    /* 內距縮小（關鍵） */
+    .card-body {
+        padding: 14px;
+    }
+
+    /* 商品標題（變小） */
+    .card-body h3 {
+        font-size: 14px;
+        margin-bottom: 6px;
+    }
+
+    /* 副標（變小） */
+    .card-body p {
+        font-size: 11px;
+        margin-bottom: 12px;
+        line-height: 1.4;
+    }
+
+    /* 底部區塊 */
+    .card-footer {
+        padding-top: 10px;
+    }
+
+    /* 價格（變小但保留重點） */
+    .price {
+        font-size: 13px;
+    }
+
+    /* 查看商品（變小） */
+    .view-link {
+        font-size: 11px;
+    }
+}
+
+/* 更小手機 */
+@media (max-width: 480px) {
+
+    .featured-grid {
+        gap: 12px;
+    }
+
+    .card-img-wrapper img {
+        height: 140px;
+    }
+
+    .card-body {
+        padding: 12px;
+    }
+
+    .card-body h3 {
+        font-size: 13px;
+    }
+
+    .card-body p {
+        font-size: 10px;
+    }
+
+    .price {
+        font-size: 12px;
+    }
+
+    .view-link {
+        font-size: 10px;
+    }
+}
 }
 }
