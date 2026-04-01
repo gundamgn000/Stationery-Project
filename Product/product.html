@@ -39,8 +39,9 @@
                     <img src="images/main-candle.jpg" alt="白茶與檀木香氛蠟燭主圖">
                 </div>
                 <div class="thumbnail-list">
-                    <img src="images/thumb1.jpg" alt="縮圖 1" class="thumbnail active">
+                    <img src="images/thumb3.jpg" alt="縮圖 1" class="thumbnail active">
                     <img src="images/thumb2.jpg" alt="縮圖 2" class="thumbnail">
+                    <img src="images/thumb1.jpg" alt="縮圖 3" class="thumbnail">
                 </div>
             </div>
 
@@ -220,6 +221,23 @@
                 updateCarousel();
             }
         });
+    </script>
+    <script>
+    const thumbnails = document.querySelectorAll('.thumbnail');
+    const mainImage = document.querySelector('.main-image img');
+
+    thumbnails.forEach(thumb => {
+    thumb.addEventListener('click', () => {
+        // 換主圖
+        mainImage.src = thumb.src;
+
+        // 移除 active
+        thumbnails.forEach(t => t.classList.remove('active'));
+
+        // 加上 active
+        thumb.classList.add('active');
+    });
+    });
     </script>
 </body>
 </html>
