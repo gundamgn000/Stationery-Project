@@ -1,0 +1,563 @@
+/* ==========================================================================
+   Hero Section
+   ========================================================================== */
+.hero-section {
+    max-width: 1200px;
+    margin: 30px auto;
+    border-radius: 24px;
+    overflow: hidden;
+    background-color: #f1ede8;
+    position: relative;
+}
+
+.hero-slider {
+    display: flex;
+    width: 300%;
+    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hero-slide {
+    width: 33.3333%;
+    flex-shrink: 0;
+}
+
+.hero-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 520px;
+    padding: 60px 80px;
+}
+
+.hero-content {
+    flex: 1;
+}
+
+.hero-content h1 {
+    font-size: 42px;
+    line-height: 1.3;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.hero-image {
+    flex: 1;
+    text-align: right;
+    height: 100%;
+    overflow: hidden;
+}
+
+.hero-image img {
+    width: 90%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+    margin-left: auto;
+    display: block;
+}
+
+.hero-btn {
+    background-color: #e68a39;
+    color: white;
+    border: none;
+    padding: 12px 120px;
+    border-radius: 25px;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(230, 138, 57, 0.3);
+    transition: all 0.3s ease;
+}
+
+.hero-btn:hover {
+    background-color: #cf7a2e;
+    transform: translateY(-2px);
+}
+
+/* 第二張 Hero */
+.slide-2 .hero-container {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: space-between;
+    padding: 0;
+    height: 520px;
+    overflow: hidden;
+}
+
+.slide-2 .hero-image {
+    flex: 0 0 55%;
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+}
+
+.slide-2 .hero-image img {
+    width: 100%;
+    height: 100%;
+    max-height: 520px;
+    object-fit: cover;
+    border-radius: 10px;
+    display: block;
+}
+
+.slide-2 .hero-content {
+    flex: 0 0 55%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 60px;
+    text-align: left;
+}
+
+.slide-2 .hero-btn {
+    background-color: #8B6B4A !important;
+    color: white;
+    padding: 12px 120px !important;
+    width: fit-content !important;
+    align-self: flex-start;
+    margin-top: 25px;
+    box-shadow: 0 4px 10px rgba(139, 107, 74, 0.3);
+}
+
+.slide-2 .hero-btn:hover {
+    background-color: #6E5338 !important;
+    box-shadow: 0 5px 15px rgba(110, 83, 56, 0.4);
+    transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   通用標題
+   ========================================================================== */
+.section-title {
+    text-align: center;
+    margin: 60px 0 40px;
+    width: 100%;
+}
+
+.section-title h2 {
+    font-size: 28px;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.section-title p {
+    font-size: 14px;
+    color: #999;
+}
+
+/* ==========================================================================
+   Featured
+   ========================================================================== */
+.featured-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto 80px;
+    padding: 0 20px;
+}
+
+.product-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    display: block;
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.card-img-wrapper img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.card-body h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.card-body p {
+    font-size: 12px;
+    color: #999;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #eee;
+    padding-top: 15px;
+    gap: 10px;
+}
+
+.price {
+    color: #a88a6d;
+    font-weight: 500;
+}
+
+.view-link {
+    font-size: 12px;
+    color: #ccc;
+    white-space: nowrap;
+}
+
+/* ==========================================================================
+   Category
+   ========================================================================== */
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto 100px;
+    padding: 0 20px;
+}
+
+.category-item {
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    height: 180px;
+    cursor: pointer;
+}
+
+.category-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.8);
+    transition: all 0.5s ease;
+}
+
+.category-label {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    color: white;
+    font-weight: 500;
+    z-index: 2;
+}
+
+.category-item:hover img {
+    transform: scale(1.1);
+    filter: brightness(1);
+}
+
+/* ==========================================================================
+   Tablet
+   ========================================================================== */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .hero-section {
+        margin: 24px 16px;
+    }
+
+    .hero-container {
+        height: 460px;
+        padding: 40px 40px;
+    }
+
+    .hero-content h1 {
+        font-size: 36px;
+        margin-bottom: 18px;
+    }
+
+    .hero-content p {
+        font-size: 16px;
+        line-height: 1.7;
+        margin-bottom: 28px;
+    }
+
+    .hero-btn {
+        padding: 10px 64px;
+        font-size: 15px;
+    }
+
+    .slide-2 .hero-container {
+        height: 460px;
+    }
+
+    .slide-2 .hero-image img {
+        max-height: 460px;
+    }
+
+    .slide-2 .hero-content {
+        padding-left: 36px;
+    }
+
+    .slide-2 .hero-btn {
+        padding: 12px 72px !important;
+    }
+
+    .featured-grid {
+        gap: 20px;
+        padding: 0 16px;
+    }
+
+    .card-img-wrapper img {
+        height: 210px;
+    }
+
+    .card-body {
+        padding: 16px;
+    }
+
+    .category-grid {
+        gap: 16px;
+        padding: 0 16px;
+    }
+
+    .category-item {
+        height: 160px;
+    }
+}
+
+/* ==========================================================================
+   Mobile
+   ========================================================================== */
+@media (max-width: 768px) {
+    .hero-section {
+        margin: 16px 12px 0;
+        border-radius: 18px;
+    }
+
+    .hero-container {
+        flex-direction: column;
+        justify-content: center;
+        height: auto;
+        min-height: 620px;
+        padding: 28px 20px 32px;
+        gap: 20px;
+    }
+
+    .hero-content {
+        flex: none;
+        width: 100%;
+        order: 2;
+        text-align: center;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .hero-content h1 {
+        font-size: 28px;
+        line-height: 1.4;
+        margin-bottom: 14px;
+    }
+
+    .hero-content p {
+        font-size: 14px;
+        line-height: 1.7;
+        margin-bottom: 20px;
+    }
+
+    .hero-image {
+        flex: none;
+        width: 100%;
+        height: 260px;
+        order: 1;
+        text-align: center;
+    }
+
+    .hero-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 12px;
+    }
+
+    .hero-btn {
+        padding: 12px 32px;
+        font-size: 15px;
+        width: auto;
+        max-width: 100%;
+    }
+
+    .slide-2 .hero-container {
+        flex-direction: column;
+        justify-content: center;
+        height: auto;
+        min-height: 620px;
+        padding: 28px 20px 32px;
+        gap: 20px;
+    }
+
+    .slide-2 .hero-image {
+        flex: none;
+        width: 100%;
+        height: 260px;
+        order: 1;
+        align-items: center;
+    }
+
+    .slide-2 .hero-image img {
+        width: 100%;
+        height: 100%;
+        max-height: none;
+        object-fit: contain;
+        border-radius: 12px;
+    }
+
+    .slide-2 .hero-content {
+        flex: none;
+        width: 100%;
+        order: 2;
+        padding-left: 0;
+        text-align: center;
+        align-items: center;
+    }
+
+    .slide-2 .hero-btn {
+        padding: 12px 32px !important;
+        width: auto !important;
+        align-self: center;
+        margin-top: 16px;
+    }
+
+    .featured-grid {
+        justify-items: center;
+        gap: 16px;
+        padding: 0 16px;
+    }
+
+    .product-card {
+        width: 100%;
+        max-width: 180px;
+    }
+
+    .card-img-wrapper img {
+        height: 160px;
+    }
+
+    .card-body {
+        padding: 14px;
+    }
+
+    .card-body h3 {
+        font-size: 14px;
+        margin-bottom: 6px;
+    }
+
+    .card-body p {
+        font-size: 11px;
+        margin-bottom: 12px;
+        line-height: 1.4;
+    }
+
+    .card-footer {
+        padding-top: 10px;
+    }
+
+    .price {
+        font-size: 13px;
+    }
+
+    .view-link {
+        font-size: 11px;
+    }
+
+    .category-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 14px;
+        margin: 0 auto 60px;
+        padding: 0 16px;
+    }
+
+    .category-item {
+        height: 140px;
+        border-radius: 12px;
+    }
+
+    .category-label {
+        font-size: 13px;
+        bottom: 10px;
+        left: 10px;
+    }
+}
+
+/* ==========================================================================
+   Small Mobile
+   ========================================================================== */
+@media (max-width: 480px) {
+    .hero-container,
+    .slide-2 .hero-container {
+        min-height: 560px;
+        padding: 22px 16px 28px;
+    }
+
+    .hero-content h1 {
+        font-size: 24px;
+    }
+
+    .hero-content p {
+        font-size: 13px;
+    }
+
+    .hero-image,
+    .slide-2 .hero-image {
+        height: 220px;
+    }
+
+    .hero-btn,
+    .slide-2 .hero-btn {
+        font-size: 14px;
+        padding: 11px 24px !important;
+    }
+
+    .featured-grid {
+        gap: 12px;
+    }
+
+    .card-img-wrapper img {
+        height: 140px;
+    }
+
+    .card-body {
+        padding: 12px;
+    }
+
+    .card-body h3 {
+        font-size: 13px;
+    }
+
+    .card-body p {
+        font-size: 10px;
+    }
+
+    .price {
+        font-size: 12px;
+    }
+
+    .view-link {
+        font-size: 10px;
+    }
+
+    .category-grid {
+        gap: 12px;
+        margin-bottom: 50px;
+    }
+
+    .category-item {
+        height: 120px;
+    }
+
+    .category-label {
+        font-size: 12px;
+    }
+}
