@@ -7,7 +7,7 @@
 }
 
 .about-hero {
-    background-color: #f1ede8;
+    background: linear-gradient(135deg, #f3f4f6 0%, #ece7df 100%);
     max-width: 1200px;
     margin: 40px auto;
     border-radius: 24px;
@@ -40,21 +40,23 @@
 .about-subtitle {
     color: #8B6B4A;
     letter-spacing: 4px;
-    font-size: 14px;
+    font-size: 13px;
+    font-weight: 600;
     display: block;
     margin-bottom: 20px;
 }
 
 .about-hero-text h1 {
-    font-size: 38px;
-    font-family: 'Noto Serif TC', serif;
-    margin-bottom: 30px;
-    line-height: 1.4;
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 24px;
+    line-height: 1.35;
+    color: #1f2937;
 }
 
 .about-hero-text p {
     font-size: 15px;
-    color: #555;
+    color: #4b5563;
     line-height: 1.9;
 }
 
@@ -91,16 +93,16 @@
 }
 
 .section-title h2 {
-    font-family: 'Noto Serif TC', serif;
     font-size: 32px;
-    color: #333;
+    font-weight: 700;
+    color: #1f2937;
     margin-bottom: 10px;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
 }
 
 .section-title p {
     color: #8B6B4A;
-    font-size: 14px;
+    font-size: 13px;
     letter-spacing: 4px;
     text-transform: uppercase;
 }
@@ -119,35 +121,38 @@
 
 .value-item {
     flex: 1;
-    text-align: center;
-    padding: 40px 20px;
-    background: rgb(241, 234, 225);
+    text-align: left;
+    padding: 36px 24px;
+    background: #ffffff;
+    border: 1px solid #ececec;
     border-radius: 20px;
-    transition: transform 0.3s ease;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.04);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .value-item:hover {
-    transform: translateY(-10px);
+    transform: translateY(-8px);
+    box-shadow: 0 16px 28px rgba(0, 0, 0, 0.06);
 }
 
 .value-num {
-    font-size: 48px;
-    color: #d3b692;
+    font-size: 42px;
+    color: #d2b695;
     font-weight: 700;
     display: block;
-    margin-bottom: 10px;
-    font-family: serif;
+    margin-bottom: 14px;
+    line-height: 1;
 }
 
 .value-item h3 {
     font-size: 20px;
     margin-bottom: 12px;
-    color: #333;
+    color: #1f2937;
 }
 
 .value-item p {
     font-size: 14px;
-    color: #666;
+    color: #6b7280;
     line-height: 1.8;
 }
 
@@ -163,6 +168,8 @@
     border-radius: 24px;
     overflow: hidden;
     align-items: center;
+    border: 1px solid #efefef;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.04);
 }
 
 .detail-img {
@@ -182,16 +189,16 @@
 }
 
 .detail-content h2 {
-    font-family: 'Noto Serif TC', serif;
     font-size: 32px;
-    line-height: 1.45;
+    line-height: 1.4;
     margin-bottom: 18px;
-    color: #333;
+    color: #1f2937;
+    font-weight: 700;
 }
 
 .detail-content p {
     font-size: 15px;
-    color: #666;
+    color: #6b7280;
     line-height: 1.9;
 }
 
@@ -228,14 +235,14 @@
     }
 
     .about-subtitle {
-        font-size: 13px;
+        font-size: 12px;
         letter-spacing: 3px;
         margin-bottom: 14px;
     }
 
     .about-hero-text h1 {
-        font-size: 30px;
-        line-height: 1.45;
+        font-size: 32px;
+        line-height: 1.4;
         margin-bottom: 18px;
     }
 
@@ -273,7 +280,7 @@
     }
 
     .section-title p {
-        font-size: 13px;
+        font-size: 12px;
         letter-spacing: 3px;
     }
 
@@ -284,12 +291,12 @@
     }
 
     .value-item {
-        padding: 30px 18px;
+        padding: 28px 18px;
         border-radius: 18px;
     }
 
     .value-num {
-        font-size: 40px;
+        font-size: 36px;
     }
 
     .value-item h3 {
@@ -374,7 +381,7 @@
 
     .about-hero-text h1 {
         font-size: 28px;
-        line-height: 1.45;
+        line-height: 1.4;
         margin-bottom: 18px;
     }
 
@@ -431,10 +438,11 @@
     .value-item {
         padding: 28px 18px;
         border-radius: 16px;
+        text-align: left;
     }
 
     .value-num {
-        font-size: 38px;
+        font-size: 34px;
         margin-bottom: 8px;
     }
 
@@ -531,7 +539,7 @@
     }
 
     .value-num {
-        font-size: 34px;
+        font-size: 30px;
     }
 
     .value-item h3 {

@@ -1,148 +1,274 @@
 /* ==========================================================================
-   Hero Section
+   佈局架構控制
+   ========================================================================== */
+.index-layout {
+    display: flex;
+    max-width: 1400px;
+    margin: 0 auto 40px;
+    gap: 30px;
+    padding: 0 20px 40px;
+    transition: all 0.3s ease;
+}
+
+/* 側邊欄左右切換邏輯 */
+.index-layout--sidebar-left { flex-direction: row; }
+.index-layout--sidebar-right { flex-direction: row-reverse; }
+
+/* ==========================================================================
+   Sidebar 位置切換控制列
+   ========================================================================== */
+.layout-controls {
+    max-width: 1400px;
+    margin: 20px auto 16px;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.layout-controls-label {
+    font-size: 13px;
+    color: #888;
+    margin-right: 4px;
+    flex-shrink: 0;
+}
+
+.layout-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 14px;
+    font-size: 13px;
+    font-family: 'Noto Sans TC', sans-serif;
+    color: #666;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.layout-btn:hover {
+    border-color: #8B6B4A;
+    color: #8B6B4A;
+}
+
+.layout-btn.active {
+    background: #8B6B4A;
+    border-color: #8B6B4A;
+    color: #fff;
+}
+
+/* ==========================================================================
+   側邊導覽樣式
+   ========================================================================== */
+.index-sidebar {
+    width: 240px;
+    flex-shrink: 0;
+    background: #fff;
+    border-radius: 16px;
+    padding: 30px 20px;
+    height: fit-content;
+    position: sticky;
+    top: 100px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+}
+
+.sidebar-title {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 25px;
+    color: #333;
+    border-left: 3px solid #8B6B4A;
+    padding-left: 12px;
+}
+
+.sidebar-list {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar-list li {
+    margin-bottom: 8px;
+}
+
+.sidebar-list a {
+    color: #666;
+    font-size: 14px;
+    display: block;
+    padding: 10px 12px;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+}
+
+.sidebar-list a:hover,
+.sidebar-list a.active {
+    background-color: #f6f1ec;
+    color: #8B6B4A;
+    transform: translateX(5px);
+    opacity: 1;
+}
+
+/* ==========================================================================
+   內容區域
+   ========================================================================== */
+.index-main {
+    flex: 1;
+    min-width: 0;
+}
+
+/* ==========================================================================
+   Hero
    ========================================================================== */
 .hero-section {
-    max-width: 1200px;
-    margin: 30px auto;
-    border-radius: 24px;
+    width: 100%;
+    background: #f1ede8;
+    border-radius: 20px;
     overflow: hidden;
-    background-color: #f1ede8;
-    position: relative;
+    margin-bottom: 50px;
 }
 
 .hero-slider {
     display: flex;
-    width: 300%;
-    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 0.8s ease;
 }
 
 .hero-slide {
-    width: 33.3333%;
-    flex-shrink: 0;
+    flex: 0 0 100%;
+    width: 100%;
 }
 
 .hero-container {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 520px;
-    padding: 60px 80px;
+    padding: 50px 60px;
+    height: 450px;
+    gap: 40px;
 }
 
 .hero-content {
-    flex: 1;
+    flex: 0 0 40%;
 }
 
 .hero-content h1 {
-    font-size: 42px;
-    line-height: 1.3;
+    font-size: 36px;
     margin-bottom: 20px;
+    line-height: 1.3;
+    color: #222;
 }
 
 .hero-content p {
     font-size: 16px;
     color: #666;
     margin-bottom: 30px;
-}
-
-.hero-image {
-    flex: 1;
-    text-align: right;
-    height: 100%;
-    overflow: hidden;
-}
-
-.hero-image img {
-    width: 90%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 15px;
-    margin-left: auto;
-    display: block;
+    line-height: 1.7;
 }
 
 .hero-btn {
-    background-color: #e68a39;
-    color: white;
+    display: inline-block;
+    padding: 14px 32px;
+    background: #8B6B4A;
+    color: #fff;
     border: none;
-    padding: 12px 120px;
-    border-radius: 25px;
-    font-size: 16px;
+    border-radius: 30px;
+    font-size: 15px;
+    font-family: 'Noto Sans TC', sans-serif;
     cursor: pointer;
-    box-shadow: 0 4px 10px rgba(230, 138, 57, 0.3);
-    transition: all 0.3s ease;
+    transition: background 0.25s, transform 0.2s;
 }
 
 .hero-btn:hover {
-    background-color: #cf7a2e;
+    background: #7a5c3d;
     transform: translateY(-2px);
 }
 
-/* 第二張 Hero */
-.slide-2 .hero-container {
-    display: flex;
-    flex-direction: row;
-    align-items: stretch;
-    justify-content: space-between;
-    padding: 0;
-    height: 520px;
-    overflow: hidden;
-}
-
-.slide-2 .hero-image {
-    flex: 0 0 55%;
+.hero-image {
+    flex: 0 0 60%;
     height: 100%;
-    display: flex;
-    align-items: flex-end;
 }
 
-.slide-2 .hero-image img {
+.hero-image img {
     width: 100%;
     height: 100%;
-    max-height: 520px;
+    border-radius: 15px;
     object-fit: cover;
-    border-radius: 10px;
     display: block;
 }
 
-.slide-2 .hero-content {
-    flex: 0 0 55%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding-left: 60px;
+/* Hero 視覺差異 */
+.hero-slide:nth-child(1) {
+    background: #f1ede8;
+}
+
+.hero-slide:nth-child(2) {
+    background: linear-gradient(135deg, #eef2f6 0%, #e3e8ed 100%);
+}
+
+.hero-slide:nth-child(3) {
+    background: linear-gradient(135deg, #f5f2ed 0%, #ece7df 100%);
+}
+
+/* Hero 2：桌機特殊排版 */
+.hero-slide:nth-child(2) .hero-container {
+    flex-direction: row-reverse;
+}
+
+.hero-slide:nth-child(2) .hero-content {
     text-align: left;
+    padding-left: 20px;
 }
 
-.slide-2 .hero-btn {
-    background-color: #8B6B4A !important;
-    color: white;
-    padding: 12px 120px !important;
-    width: fit-content !important;
-    align-self: flex-start;
-    margin-top: 25px;
-    box-shadow: 0 4px 10px rgba(139, 107, 74, 0.3);
+.hero-slide:nth-child(2) .hero-content h1 {
+    margin-bottom: 16px;
+    color: #2f3a4a;
 }
 
-.slide-2 .hero-btn:hover {
-    background-color: #6E5338 !important;
-    box-shadow: 0 5px 15px rgba(110, 83, 56, 0.4);
-    transform: translateY(-2px);
+.hero-slide:nth-child(2) .hero-content p {
+    max-width: 420px;
+}
+
+.hero-slide:nth-child(2) .hero-btn {
+    background: #2f3a4a;
+}
+
+.hero-slide:nth-child(2) .hero-btn:hover {
+    background: #24303f;
+}
+
+/* Hero 3：桌機特殊排版 */
+.hero-slide:nth-child(3) .hero-content {
+    flex: 0 0 35%;
+}
+
+.hero-slide:nth-child(3) .hero-image {
+    flex: 0 0 65%;
+}
+
+.hero-slide:nth-child(3) .hero-content h1 {
+    color: #3c3c3c;
+}
+
+.hero-slide:nth-child(3) .hero-btn {
+    background: #a17b52;
+}
+
+.hero-slide:nth-child(3) .hero-btn:hover {
+    background: #8d6944;
 }
 
 /* ==========================================================================
-   通用標題
+   區塊標題
    ========================================================================== */
 .section-title {
-    text-align: center;
-    margin: 60px 0 40px;
-    width: 100%;
+    margin-bottom: 28px;
 }
 
 .section-title h2 {
-    font-size: 28px;
-    margin-bottom: 5px;
-    color: #333;
+    font-size: 24px;
+    font-weight: 700;
+    color: #222;
+    margin-bottom: 6px;
 }
 
 .section-title p {
@@ -151,35 +277,41 @@
 }
 
 /* ==========================================================================
-   Featured
+   商品卡片
    ========================================================================== */
 .featured-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-    max-width: 1200px;
-    margin: 0 auto 80px;
-    padding: 0 20px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
 }
 
 .product-card {
-    background: white;
+    background: #fff;
     border-radius: 15px;
     overflow: hidden;
-    transition: all 0.3s ease;
-    cursor: pointer;
-    display: block;
+    transition: 0.3s;
+    border: 1px solid #f0f0f0;
 }
 
 .product-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+.card-img-wrapper {
+    overflow: hidden;
+    height: 200px;
 }
 
 .card-img-wrapper img {
     width: 100%;
-    height: 250px;
+    height: 100%;
     object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.product-card:hover .card-img-wrapper img {
+    transform: scale(1.05);
 }
 
 .card-body {
@@ -188,376 +320,277 @@
 
 .card-body h3 {
     font-size: 16px;
-    margin-bottom: 10px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: #222;
 }
 
 .card-body p {
-    font-size: 12px;
-    color: #999;
-    margin-bottom: 20px;
-    line-height: 1.5;
+    font-size: 13px;
+    color: #888;
+    margin-bottom: 16px;
+    line-height: 1.6;
 }
 
 .card-footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-top: 1px solid #eee;
-    padding-top: 15px;
-    gap: 10px;
 }
 
 .price {
-    color: #a88a6d;
-    font-weight: 500;
+    font-size: 18px;
+    font-weight: 700;
+    color: #8B6B4A;
 }
 
 .view-link {
-    font-size: 12px;
-    color: #ccc;
-    white-space: nowrap;
-}
-
-/* ==========================================================================
-   Category
-   ========================================================================== */
-.category-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-    max-width: 1200px;
-    margin: 0 auto 100px;
-    padding: 0 20px;
-}
-
-.category-item {
-    position: relative;
-    border-radius: 15px;
-    overflow: hidden;
-    height: 180px;
+    font-size: 13px;
+    color: #8B6B4A;
     cursor: pointer;
+    border-bottom: 1px solid #8B6B4A;
+    transition: opacity 0.2s;
 }
 
-.category-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    filter: brightness(0.8);
-    transition: all 0.5s ease;
-}
-
-.category-label {
-    position: absolute;
-    bottom: 15px;
-    left: 15px;
-    color: white;
-    font-weight: 500;
-    z-index: 2;
-}
-
-.category-item:hover img {
-    transform: scale(1.1);
-    filter: brightness(1);
+.view-link:hover {
+    opacity: 0.7;
 }
 
 /* ==========================================================================
-   Tablet
+   Tablet (769px ~ 1024px)
    ========================================================================== */
 @media (min-width: 769px) and (max-width: 1024px) {
-    .hero-section {
-        margin: 24px 16px;
+    .index-layout {
+        flex-direction: column;
+        margin: 0 auto 20px;
+        padding: 0 16px 20px;
     }
 
-    .hero-container {
-        height: 460px;
-        padding: 40px 40px;
+    .index-sidebar {
+        width: 100%;
+        position: static;
+        box-shadow: none;
+        border: 1px solid #eee;
+        padding: 20px;
     }
 
-    .hero-content h1 {
-        font-size: 36px;
-        margin-bottom: 18px;
+    .sidebar-list {
+        display: flex;
+        overflow-x: auto;
+        gap: 10px;
+        padding-bottom: 5px;
     }
 
-    .hero-content p {
-        font-size: 16px;
-        line-height: 1.7;
-        margin-bottom: 28px;
+    .sidebar-list li {
+        margin-bottom: 0;
+        flex-shrink: 0;
     }
 
-    .hero-btn {
-        padding: 10px 64px;
-        font-size: 15px;
+    .sidebar-list a {
+        white-space: nowrap;
     }
 
-    .slide-2 .hero-container {
-        height: 460px;
+    .sidebar-list a:hover,
+    .sidebar-list a.active {
+        transform: none;
     }
 
-    .slide-2 .hero-image img {
-        max-height: 460px;
-    }
-
-    .slide-2 .hero-content {
-        padding-left: 36px;
-    }
-
-    .slide-2 .hero-btn {
-        padding: 12px 72px !important;
-    }
-
-    .featured-grid {
-        gap: 20px;
+    .layout-controls {
         padding: 0 16px;
-    }
-
-    .card-img-wrapper img {
-        height: 210px;
-    }
-
-    .card-body {
-        padding: 16px;
-    }
-
-    .category-grid {
-        gap: 16px;
-        padding: 0 16px;
-    }
-
-    .category-item {
-        height: 160px;
-    }
-}
-
-/* ==========================================================================
-   Mobile
-   ========================================================================== */
-@media (max-width: 768px) {
-    .hero-section {
-        margin: 16px 12px 0;
-        border-radius: 18px;
+        margin: 16px auto 12px;
     }
 
     .hero-container {
         flex-direction: column;
-        justify-content: center;
         height: auto;
-        min-height: 620px;
-        padding: 28px 20px 32px;
+        text-align: center;
+        padding: 40px 20px;
+        gap: 24px;
+    }
+
+    .hero-content {
+        flex: 0 0 auto;
+        width: 100%;
+        text-align: center;
+    }
+
+    .hero-image {
+        flex: 0 0 auto;
+        width: 100%;
+        height: auto;
+    }
+
+    .hero-image img {
+        height: auto;
+        max-height: 260px;
+    }
+
+    /* Hero 2 平板版改成跟 H1、H3 一樣 */
+    .hero-slide:nth-child(2) .hero-container {
+        flex-direction: column;
+    }
+
+    .hero-slide:nth-child(2) .hero-content {
+        flex: 0 0 auto;
+        width: 100%;
+        text-align: center;
+        padding-left: 0;
+    }
+
+    .hero-slide:nth-child(2) .hero-content p {
+        max-width: none;
+    }
+
+    .hero-slide:nth-child(2) .hero-image {
+        flex: 0 0 auto;
+        width: 100%;
+    }
+
+    /* Hero 3 平板版也收回統一 */
+    .hero-slide:nth-child(3) .hero-content,
+    .hero-slide:nth-child(3) .hero-image {
+        flex: 0 0 auto;
+        width: 100%;
+    }
+
+    .featured-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+    }
+}
+
+/* ==========================================================================
+   Mobile (max 768px)
+   ========================================================================== */
+@media (max-width: 768px) {
+    .index-layout {
+        flex-direction: column;
+        margin: 0 auto 20px;
+        padding: 0 16px 20px;
+        gap: 20px;
+    }
+
+    .index-sidebar {
+        width: 100%;
+        position: static;
+        box-shadow: none;
+        border: 1px solid #eee;
+        padding: 16px;
+    }
+
+    .sidebar-title {
+        font-size: 14px;
+        margin-bottom: 14px;
+    }
+
+    .sidebar-list {
+        display: flex;
+        overflow-x: auto;
+        gap: 8px;
+        padding-bottom: 4px;
+    }
+
+    .sidebar-list li {
+        margin-bottom: 0;
+        flex-shrink: 0;
+    }
+
+    .sidebar-list a {
+        white-space: nowrap;
+        padding: 8px 12px;
+        font-size: 13px;
+    }
+
+    .sidebar-list a:hover,
+    .sidebar-list a.active {
+        transform: none;
+    }
+
+    .layout-controls {
+        padding: 0 16px;
+        margin: 12px auto 8px;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .hero-container {
+        flex-direction: column;
+        height: auto;
+        padding: 30px 20px;
+        text-align: center;
         gap: 20px;
     }
 
     .hero-content {
-        flex: none;
+        flex: 0 0 auto;
         width: 100%;
-        order: 2;
         text-align: center;
-        padding-left: 0;
-        padding-right: 0;
     }
 
     .hero-content h1 {
-        font-size: 28px;
-        line-height: 1.4;
-        margin-bottom: 14px;
-    }
-
-    .hero-content p {
-        font-size: 14px;
-        line-height: 1.7;
-        margin-bottom: 20px;
+        font-size: 26px;
     }
 
     .hero-image {
-        flex: none;
+        flex: 0 0 auto;
         width: 100%;
-        height: 260px;
-        order: 1;
-        text-align: center;
+        height: auto;
     }
 
     .hero-image img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        border-radius: 12px;
-    }
-
-    .hero-btn {
-        padding: 12px 32px;
-        font-size: 15px;
-        width: auto;
-        max-width: 100%;
-    }
-
-    .slide-2 .hero-container {
-        flex-direction: column;
-        justify-content: center;
         height: auto;
-        min-height: 620px;
-        padding: 28px 20px 32px;
-        gap: 20px;
+        max-height: 220px;
     }
 
-    .slide-2 .hero-image {
-        flex: none;
-        width: 100%;
-        height: 260px;
-        order: 1;
-        align-items: center;
+    /* Hero 2 手機版改成跟 H1、H3 一樣 */
+    .hero-slide:nth-child(2) .hero-container {
+        flex-direction: column;
     }
 
-    .slide-2 .hero-image img {
+    .hero-slide:nth-child(2) .hero-content {
+        flex: 0 0 auto;
         width: 100%;
-        height: 100%;
-        max-height: none;
-        object-fit: contain;
-        border-radius: 12px;
-    }
-
-    .slide-2 .hero-content {
-        flex: none;
-        width: 100%;
-        order: 2;
-        padding-left: 0;
         text-align: center;
-        align-items: center;
+        padding-left: 0;
     }
 
-    .slide-2 .hero-btn {
-        padding: 12px 32px !important;
-        width: auto !important;
-        align-self: center;
-        margin-top: 16px;
+    .hero-slide:nth-child(2) .hero-content p {
+        max-width: none;
+    }
+
+    .hero-slide:nth-child(2) .hero-image {
+        flex: 0 0 auto;
+        width: 100%;
+    }
+
+    /* Hero 3 手機版也收回統一 */
+    .hero-slide:nth-child(3) .hero-content,
+    .hero-slide:nth-child(3) .hero-image {
+        flex: 0 0 auto;
+        width: 100%;
     }
 
     .featured-grid {
-        justify-items: center;
+        grid-template-columns: 1fr;
         gap: 16px;
-        padding: 0 16px;
     }
 
-    .product-card {
-        width: 100%;
-        max-width: 180px;
-    }
-
-    .card-img-wrapper img {
-        height: 160px;
-    }
-
-    .card-body {
-        padding: 14px;
-    }
-
-    .card-body h3 {
-        font-size: 14px;
-        margin-bottom: 6px;
-    }
-
-    .card-body p {
-        font-size: 11px;
-        margin-bottom: 12px;
-        line-height: 1.4;
-    }
-
-    .card-footer {
-        padding-top: 10px;
-    }
-
-    .price {
-        font-size: 13px;
-    }
-
-    .view-link {
-        font-size: 11px;
-    }
-
-    .category-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 14px;
-        margin: 0 auto 60px;
-        padding: 0 16px;
-    }
-
-    .category-item {
-        height: 140px;
-        border-radius: 12px;
-    }
-
-    .category-label {
-        font-size: 13px;
-        bottom: 10px;
-        left: 10px;
+    .card-img-wrapper {
+        height: 180px;
     }
 }
 
-/* ==========================================================================
-   Small Mobile
-   ========================================================================== */
 @media (max-width: 480px) {
-    .hero-container,
-    .slide-2 .hero-container {
-        min-height: 560px;
-        padding: 22px 16px 28px;
+    .layout-controls {
+        padding: 0 12px;
+    }
+
+    .layout-btn {
+        font-size: 12px;
+        padding: 5px 10px;
     }
 
     .hero-content h1 {
-        font-size: 24px;
-    }
-
-    .hero-content p {
-        font-size: 13px;
-    }
-
-    .hero-image,
-    .slide-2 .hero-image {
-        height: 220px;
-    }
-
-    .hero-btn,
-    .slide-2 .hero-btn {
-        font-size: 14px;
-        padding: 11px 24px !important;
-    }
-
-    .featured-grid {
-        gap: 12px;
-    }
-
-    .card-img-wrapper img {
-        height: 140px;
-    }
-
-    .card-body {
-        padding: 12px;
-    }
-
-    .card-body h3 {
-        font-size: 13px;
-    }
-
-    .card-body p {
-        font-size: 10px;
-    }
-
-    .price {
-        font-size: 12px;
-    }
-
-    .view-link {
-        font-size: 10px;
-    }
-
-    .category-grid {
-        gap: 12px;
-        margin-bottom: 50px;
-    }
-
-    .category-item {
-        height: 120px;
-    }
-
-    .category-label {
-        font-size: 12px;
+        font-size: 22px;
     }
 }

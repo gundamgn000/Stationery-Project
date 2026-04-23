@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>白茶與檀木香氛蠟燭 - Logo</title>
+    <title>智能手錶 Pro - Logo</title>
     <link rel="stylesheet" href="../css/base.css">
     <link rel="stylesheet" href="../css/product.css">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
@@ -22,17 +22,16 @@
             </button>
 
             <nav class="nav-menu">
-                <a href="../index/index.html" class="active">首頁</a>
-                <a href="../about/about.html">品牌故事</a>
+                <a href="../index/index.html">首頁</a>
+                <a href="#">品牌故事</a>
 
                 <div class="nav-dropdown">
-                    <a href="../Product/product.html" class="nav-dropdown-trigger">商品</a>
+                    <a href="../product/product.html" class="nav-dropdown-trigger active">商品</a>
                     <div class="nav-dropdown-menu">
-                         <a href="../Product/product.html" class="drawer-sublink">所有商品</a>
-                        <a href="../Product/product.html?category=fragrance" class="drawer-sublink">香氛</a>
-                        <a href="../Product/product.html?category=essential-oil" class="drawer-sublink">精油</a>
-                        <a href="../Product/product.html?category=cream" class="drawer-sublink">乳霜</a>
-                        <a href="../Product/product.html?category=diffuser" class="drawer-sublink">擴香</a>
+                        <a href="../product/product.html?category=all" class="drawer-sublink">所有商品</a>
+                        <a href="../product/product.html?category=3c" class="drawer-sublink">3C 科技</a>
+                        <a href="../product/product.html?category=smart-home" class="drawer-sublink">智慧家電</a>
+                        <a href="../product/product.html?category=lifestyle" class="drawer-sublink">生活周邊</a>
                     </div>
                 </div>
 
@@ -40,78 +39,91 @@
             </nav>
 
             <div class="nav-icons">
-                <a href="#">🔍 搜尋商品</a>
-                <a href="#">會員</a>
-                <a href="#">🛒購物車 (2)</a>
+                <a href="#">🔍 搜尋</a>
+                <a href="#">會員中心</a>
+                <a href="#">🛒 購物車 (2)</a>
             </div>
         </div>
 
         <div class="mobile-drawer" id="mobileDrawer">
             <div class="mobile-drawer-inner">
-                <a href="../index/index.html" class="drawer-link active">首頁</a>
-                <a href="../about/about.html" class="drawer-link">品牌故事</a>
+                <a href="../index/index.html" class="drawer-link">首頁</a>
+                <a href="#" class="drawer-link">品牌故事</a>
 
                 <div class="drawer-dropdown">
-                    <button class="drawer-dropdown-toggle" id="drawerDropdownToggle" type="button">
+                    <button class="drawer-dropdown-toggle active" id="drawerDropdownToggle" type="button">
                         商品分類
                         <span class="drawer-arrow">⌄</span>
                     </button>
-
                     <div class="drawer-submenu active" id="drawerSubmenu">
-                        <a href="../Product/product.html" class="drawer-sublink">所有商品</a>
-                        <a href="../Product/product.html?category=fragrance" class="drawer-sublink">香氛</a>
-                        <a href="../Product/product.html?category=essential-oil" class="drawer-sublink">精油</a>
-                        <a href="../Product/product.html?category=cream" class="drawer-sublink">乳霜</a>
-                        <a href="../Product/product.html?category=diffuser" class="drawer-sublink">擴香</a>
+                        <a href="product.html?category=all" class="drawer-sublink">所有商品</a>
+                        <a href="product.html?category=3c" class="drawer-sublink">3C 科技</a>
+                        <a href="product.html?category=smart-home" class="drawer-sublink">智慧家電</a>
+                        <a href="product.html?category=lifestyle" class="drawer-sublink">生活周邊</a>
                     </div>
                 </div>
 
                 <a href="#footer" class="drawer-link">聯絡我們</a>
 
                 <div class="mobile-drawer-icons">
-                    <a href="#">🔍 搜尋商品</a>
-                    <a href="#">會員</a>
-                    <a href="#">🛒購物車 (2)</a>
+                    <a href="#">🔍 搜尋</a>
+                    <a href="#">會員中心</a>
+                    <a href="#">🛒 購物車 (2)</a>
                 </div>
             </div>
         </div>
     </header>
 
+    
+    <div class="breadcrumb-bar">
+        <div class="breadcrumb-inner">
+            <a href="../index/index.html">首頁</a>
+            <span class="breadcrumb-sep">›</span>
+            <a href="../product/product.html">所有商品</a>
+            <span class="breadcrumb-sep">›</span>
+            <span class="breadcrumb-current">智能手錶 Pro</span>
+        </div>
+    </div>
+
     <main class="main-content">
         <div class="product-wrapper">
+
+            <!-- 左：圖片 -->
             <div class="product-gallery">
                 <div class="main-image">
-                    <img src="images/main-candle.jpg" alt="白茶與檀木香氛蠟燭主圖">
+                    <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&q=80" alt="智能手錶 Pro 主圖">
                 </div>
-
                 <div class="thumbnail-list">
-                    <img src="images/thumb3.jpg" alt="縮圖 1" class="thumbnail active">
-                    <img src="images/thumb2.jpg" alt="縮圖 2" class="thumbnail">
-                    <img src="images/thumb1.jpg" alt="縮圖 3" class="thumbnail">
+                    <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&q=80&w=200" alt="縮圖 1" class="thumbnail active">
+                    <img src="https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?auto=format&fit=crop&q=80&w=200" alt="縮圖 2" class="thumbnail">
+                    <img src="https://images.unsplash.com/photo-1434493789847-2f02dc6ca35d?auto=format&fit=crop&q=80&w=200" alt="縮圖 3" class="thumbnail">
                 </div>
             </div>
 
+            <!-- 右：資訊 -->
             <div class="product-info">
-                <h1 class="product-title">白茶與檀木香氛蠟燭</h1>
-                <div class="product-price">NT$599</div>
+                <span class="product-badge">3C 科技</span>
+                <h1 class="product-title">智能手錶 Pro</h1>
+                <div class="product-price">NT$ 8,900</div>
 
                 <div class="product-description">
-                    <p>以白茶、雪松與淡雅木質調構成，</p>
-                    <p>呈現安靜且溫柔的居家氣息。</p>
+                    <p>結合健康監測、訊息通知與日常應用，為生活帶來更直覺的智慧體驗。</p>
+                    <p>輕量機身與俐落外型設計，適合長時間配戴與各種使用情境。</p>
                 </div>
 
                 <ul class="product-specs">
-                    <li>容量：180g</li>
-                    <li>香味：單一款也可以做成假選項</li>
-                    <li>成分：天然植物蠟</li>
-                    <li>燃燒時間：約 35 小時</li>
-                    <li>出貨時間：付款後 3-5 個工作天</li>
+                    <li>尺寸：44mm 錶殼</li>
+                    <li>材質：鋁合金機身 / 強化玻璃</li>
+                    <li>螢幕：1.9 吋高亮度顯示</li>
+                    <li>連線：藍牙 / Wi-Fi</li>
+                    <li>續航：最長 36 小時</li>
+                    <li>出貨時間：付款後 3–5 個工作天</li>
                 </ul>
 
                 <div class="quantity-selector">
-                    <span class="qty-btn">-</span>
-                    <span class="qty-number">1</span>
-                    <span class="qty-btn">+</span>
+                    <button class="qty-btn" id="qtyMinus">−</button>
+                    <span class="qty-number" id="qtyNumber">1</span>
+                    <button class="qty-btn" id="qtyPlus">+</button>
                 </div>
 
                 <button class="add-to-cart-btn">加入購物車</button>
@@ -119,105 +131,92 @@
         </div>
     </main>
 
+    <!-- 推薦商品 -->
     <section class="recommend-section">
         <h2 class="recommend-title">推薦商品</h2>
-
         <div class="recommend-carousel">
-            <button class="carousel-btn carousel-btn-prev" aria-label="上一個商品">
-                &#10094;
-            </button>
+            <button class="carousel-btn carousel-btn-prev" aria-label="上一個">&#10094;</button>
 
             <div class="recommend-slider" id="recommendSlider">
                 <div class="recommend-track">
                     <a href="product-detail.html" class="product-card">
-                        <img src="images/rec1.jpg" alt="沉靜助眠精油">
+                        <img src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?auto=format&fit=crop&q=80&w=400" alt="無線耳機 ANC">
                         <div class="card-info">
-                            <h3>沉靜助眠精油</h3>
-                            <p class="card-subtitle">放鬆身心，打造療癒睡前時光</p>
+                            <h3>無線耳機 ANC</h3>
+                            <p class="card-subtitle">主動降噪與清晰通話，帶來沉浸式音樂體驗</p>
                             <div class="card-footer">
-                                <span class="card-price">NT$ 599</span>
-                                <span class="view-product">查看商品 &rarr;</span>
+                                <span class="card-price">NT$ 5,490</span>
+                                <span class="view-product">查看商品 →</span>
                             </div>
                         </div>
                     </a>
-
                     <a href="product-detail.html" class="product-card">
-                        <img src="images/rec2.jpg" alt="植萃保濕乳霜">
+                        <img src="https://vader-prod.s3.amazonaws.com/1735902638-img-1136-6777c5a59e357.jpg" alt="智慧空氣清淨機">
                         <div class="card-info">
-                            <h3>植萃保濕乳霜</h3>
-                            <p class="card-subtitle">輕盈不黏膩，日常溫和修護</p>
+                            <h3>智慧空氣清淨機</h3>
+                            <p class="card-subtitle">智慧感測空氣品質，維持居家清新舒適</p>
                             <div class="card-footer">
-                                <span class="card-price">NT$ 1280</span>
-                                <span class="view-product">查看商品 &rarr;</span>
+                                <span class="card-price">NT$ 12,800</span>
+                                <span class="view-product">查看商品 →</span>
                             </div>
                         </div>
                     </a>
-
                     <a href="product-detail.html" class="product-card">
-                        <img src="images/rec3.jpg" alt="高效鎖水面霜">
+                        <img src="https://www.koc.com.tw/wp-content/uploads/2024/04/20240411145108_0_676120.jpg" alt="智能檯燈 Plus">
                         <div class="card-info">
-                            <h3>高效鎖水面霜</h3>
-                            <p class="card-subtitle">深層滋養，強化肌膚保水屏障</p>
+                            <h3>智能檯燈 Plus</h3>
+                            <p class="card-subtitle">多段色溫調節，兼顧閱讀、工作與空間氣氛</p>
                             <div class="card-footer">
-                                <span class="card-price">NT$ 980</span>
-                                <span class="view-product">查看商品 &rarr;</span>
+                                <span class="card-price">NT$ 2,680</span>
+                                <span class="view-product">查看商品 →</span>
                             </div>
                         </div>
                     </a>
-
-                    <a href="product.html" class="product-card">
-                        <img src="images/rec4.jpg" alt="靜謐森林擴香精油">
+                    <a href="product-detail.html" class="product-card">
+                        <img src="https://dlcdnwebimgs.asus.com/gain/8F0AC3F5-1D70-41A5-88F3-3B03F62FA78F/w1000/h732" alt="多功能充電座">
                         <div class="card-info">
-                            <h3>靜謐森林擴香精油</h3>
-                            <p class="card-subtitle">在日常之中，留一段屬於自己的寧靜</p>
+                            <h3>多功能充電座</h3>
+                            <p class="card-subtitle">整合多裝置充電需求，桌面更俐落有序</p>
                             <div class="card-footer">
-                                <span class="card-price">NT$ 680</span>
-                                <span class="view-product">查看商品 &rarr;</span>
+                                <span class="card-price">NT$ 1,980</span>
+                                <span class="view-product">查看商品 →</span>
                             </div>
                         </div>
                     </a>
-
-                    <a href="product.html" class="product-card">
-                        <img src="images/rec5.jpg" alt="柑橘亮澤保濕面霜">
+                    <a href="product-detail.html" class="product-card">
+                        <img src="https://3c.yipee.cc/wp-content/uploads/2025/04/1-ASUS-ProArt-Display-OLED-PA32UCDM.jpg" alt="4K 智慧螢幕">
                         <div class="card-info">
-                            <h3>柑橘亮澤保濕面霜</h3>
-                            <p class="card-subtitle">輕盈不黏膩，日常保養的安心選擇</p>
+                            <h3>4K 智慧螢幕</h3>
+                            <p class="card-subtitle">高解析畫質與多工顯示，提升工作與娛樂品質</p>
                             <div class="card-footer">
-                                <span class="card-price">NT$ 980</span>
-                                <span class="view-product">查看商品 &rarr;</span>
+                                <span class="card-price">NT$ 15,990</span>
+                                <span class="view-product">查看商品 →</span>
                             </div>
                         </div>
                     </a>
                 </div>
             </div>
 
-            <button class="carousel-btn carousel-btn-next" aria-label="下一個商品">
-                &#10095;
-            </button>
+            <button class="carousel-btn carousel-btn-next" aria-label="下一個">&#10095;</button>
         </div>
     </section>
 
     <footer id="footer" class="footer-main">
         <div class="footer-top-container">
-            <div class="footer-logo-box">
-                <div class="footer-logo-square">Logo</div>
-            </div>
-
+            <div class="footer-logo-box"><div class="footer-logo-square">Logo</div></div>
             <div class="footer-links-grid">
                 <div class="footer-column">
                     <h4>Brand Name</h4>
-                    <p>致力於提供高品質產品，結合設計與生活美學，打造舒適且有質感的日常體驗。</p>
+                    <p>提供多元 3C 與生活科技商品，整合熱門品牌與精選品類，打造更直覺的選購體驗。</p>
                 </div>
-
                 <div class="footer-column">
                     <h4>快速連結</h4>
                     <ul>
                         <li><a href="../index/index.html">首頁</a></li>
-                        <li><a href="../about/about.html">關於我們</a></li>
-                        <li><a href="../Product/product.html">所有商品</a></li>
+                        <li><a href="../product-detail/product-detail.html">關於我們</a></li>
+                        <li><a href="../product/product.html">所有商品</a></li>
                     </ul>
                 </div>
-
                 <div class="footer-column">
                     <h4>社群</h4>
                     <ul>
@@ -226,86 +225,75 @@
                         <li><a href="#">Facebook</a></li>
                     </ul>
                 </div>
-
                 <div class="footer-column">
                     <h4>客服資訊</h4>
-                    <p>Email: service@email.com</p>
-                    <p>電話: 02-1234-5678</p>
-                    <p>服務時間: 09:00 - 18:00</p>
+                    <p>Email: service@brand.com</p>
+                    <p>電話: 02-2345-6789</p>
+                    <p>服務時間: 09:00–18:00</p>
                 </div>
             </div>
         </div>
-
-        <div class="footer-bottom">
-            © 2026 Brand Name. All rights reserved.
-        </div>
+        <div class="footer-bottom">© 2026 Brand Name. All rights reserved.</div>
     </footer>
 
     <script>
-        const slider = document.getElementById("recommendSlider");
-        const track = slider.querySelector(".recommend-track");
-        const prevBtn = document.querySelector(".carousel-btn-prev");
-        const nextBtn = document.querySelector(".carousel-btn-next");
-        const cards = track.querySelectorAll(".product-card");
+        // ── 漢堡選單 ──
+        const menuToggle = document.getElementById('menuToggle');
+        const mobileDrawer = document.getElementById('mobileDrawer');
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('active');
+            mobileDrawer.classList.toggle('active');
+            menuToggle.setAttribute('aria-expanded', menuToggle.classList.contains('active'));
+        });
+
+        const drawerDropdownToggle = document.getElementById('drawerDropdownToggle');
+        const drawerSubmenu = document.getElementById('drawerSubmenu');
+        drawerDropdownToggle.addEventListener('click', () => {
+            drawerDropdownToggle.classList.toggle('active');
+            drawerSubmenu.classList.toggle('active');
+        });
+
+        // ── 縮圖切換 ──
+        const thumbnails = document.querySelectorAll('.thumbnail');
+        const mainImage = document.querySelector('.main-image img');
+        thumbnails.forEach(thumb => {
+            thumb.addEventListener('click', () => {
+                mainImage.src = thumb.src.replace('&w=200', '&w=800');
+                thumbnails.forEach(t => t.classList.remove('active'));
+                thumb.classList.add('active');
+            });
+        });
+
+        // ── 數量選擇 ──
+        let qty = 1;
+        const qtyNumber = document.getElementById('qtyNumber');
+        document.getElementById('qtyMinus').addEventListener('click', () => {
+            if (qty > 1) { qty--; qtyNumber.textContent = qty; }
+        });
+        document.getElementById('qtyPlus').addEventListener('click', () => {
+            qty++;
+            qtyNumber.textContent = qty;
+        });
+
+        // ── 推薦輪播 ──
+        const slider = document.getElementById('recommendSlider');
+        const track = slider.querySelector('.recommend-track');
+        const prevBtn = document.querySelector('.carousel-btn-prev');
+        const nextBtn = document.querySelector('.carousel-btn-next');
+        const cards = track.querySelectorAll('.product-card');
 
         let currentIndex = 0;
-
         const cardWidth = 340;
         const gap = 24;
         const visibleCards = 3;
         const maxIndex = cards.length - visibleCards;
 
         function updateCarousel() {
-            const offset = currentIndex * (cardWidth + gap);
-            track.style.transform = `translateX(-${offset}px)`;
+            track.style.transform = `translateX(-${currentIndex * (cardWidth + gap)}px)`;
         }
 
-        nextBtn.addEventListener("click", () => {
-            if (currentIndex < maxIndex) {
-                currentIndex++;
-                updateCarousel();
-            }
-        });
-
-        prevBtn.addEventListener("click", () => {
-            if (currentIndex > 0) {
-                currentIndex--;
-                updateCarousel();
-            }
-        });
-    </script>
-
-    <script>
-        const thumbnails = document.querySelectorAll('.thumbnail');
-        const mainImage = document.querySelector('.main-image img');
-
-        thumbnails.forEach(thumb => {
-            thumb.addEventListener('click', () => {
-                mainImage.src = thumb.src;
-                thumbnails.forEach(t => t.classList.remove('active'));
-                thumb.classList.add('active');
-            });
-        });
-    </script>
-
-    <script>
-        const menuToggle = document.getElementById('menuToggle');
-        const mobileDrawer = document.getElementById('mobileDrawer');
-        const drawerDropdownToggle = document.getElementById('drawerDropdownToggle');
-        const drawerSubmenu = document.getElementById('drawerSubmenu');
-
-        menuToggle.addEventListener('click', () => {
-            menuToggle.classList.toggle('active');
-            mobileDrawer.classList.toggle('active');
-
-            const isExpanded = menuToggle.classList.contains('active');
-            menuToggle.setAttribute('aria-expanded', isExpanded ? 'true' : 'false');
-        });
-
-        drawerDropdownToggle.addEventListener('click', () => {
-            drawerDropdownToggle.classList.toggle('active');
-            drawerSubmenu.classList.toggle('active');
-        });
+        nextBtn.addEventListener('click', () => { if (currentIndex < maxIndex) { currentIndex++; updateCarousel(); } });
+        prevBtn.addEventListener('click', () => { if (currentIndex > 0) { currentIndex--; updateCarousel(); } });
     </script>
 
 </body>

@@ -179,12 +179,7 @@ img {
    Footer
    ========================================================================== */
 
-.logo,
-.header,
-.footer-main {
-    all: unset;
-    display: revert;
-}
+
 
 .footer-main {
     background-color: #f1ede8;
@@ -620,3 +615,121 @@ img {
         font-size: 12px;
     }
 }
+/* ==========================================================================
+   Desktop Sidebar Navbar
+   ========================================================================== */
+@media (min-width: 1025px) {
+    body {
+        padding-left: 280px;
+    }
+
+    .header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 280px;
+        height: 100vh;
+        padding: 32px 24px;
+        border-right: 1px solid #eee;
+        border-bottom: none;
+        background-color: #fff;
+        z-index: 1100;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .header-container {
+        max-width: none;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+    }
+
+    .logo {
+        font-size: 24px;
+        font-weight: 700;
+        letter-spacing: 2px;
+        margin-bottom: 36px;
+    }
+
+    .menu-toggle {
+        display: none !important;
+    }
+
+    .nav-menu {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 14px;
+        width: 100%;
+    }
+
+    .nav-menu > a,
+    .nav-dropdown-trigger {
+        margin: 0;
+        font-size: 15px;
+        line-height: 1.5;
+    }
+
+    .nav-dropdown {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-dropdown-menu {
+        position: static;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        min-width: 100%;
+        margin-top: 8px;
+        padding: 8px 0 0 12px;
+        border: none;
+        border-radius: 0;
+        box-shadow: none;
+        background: transparent;
+    }
+
+    .nav-dropdown-menu a {
+        padding: 6px 0;
+        font-size: 14px;
+        color: #666;
+    }
+
+    .nav-dropdown-menu a:hover {
+        background: transparent;
+        color: #8B6B4A;
+    }
+
+    .nav-icons {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+        margin-top: auto;
+        padding-top: 28px;
+        width: 100%;
+        font-size: 14px;
+    }
+
+    .nav-icons a {
+        color: #666;
+    }
+
+    .mobile-drawer {
+        display: none !important;
+    }
+
+    .footer-main {
+        margin-top: 100px;
+    }
+}
+
+

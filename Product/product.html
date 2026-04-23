@@ -26,13 +26,12 @@
                 <a href="../about/about.html">品牌故事</a>
 
                 <div class="nav-dropdown">
-                    <a href="product.html" class="active nav-dropdown-trigger">商品</a>
+                    <a href="product.html" class="nav-dropdown-trigger active">商品</a>
                     <div class="nav-dropdown-menu">
-                        <a href="product.html?category=all">所有商品</a>
-                        <a href="product.html?category=fragrance">香氛</a>
-                        <a href="product.html?category=essential-oil">精油</a>
-                        <a href="product.html?category=cream">乳霜</a>
-                        <a href="product.html?category=diffuser">擴香</a>
+                        <a href="product.html?category=all" class="drawer-sublink">所有商品</a>
+                        <a href="product.html?category=3c" class="drawer-sublink">3C 科技</a>
+                        <a href="product.html?category=smart-home" class="drawer-sublink">智慧家電</a>
+                        <a href="product.html?category=lifestyle" class="drawer-sublink">生活周邊</a>
                     </div>
                 </div>
 
@@ -59,10 +58,9 @@
 
                     <div class="drawer-submenu active" id="drawerSubmenu">
                         <a href="product.html?category=all" class="drawer-sublink">所有商品</a>
-                        <a href="product.html?category=fragrance" class="drawer-sublink">香氛</a>
-                        <a href="product.html?category=essential-oil" class="drawer-sublink">精油</a>
-                        <a href="product.html?category=cream" class="drawer-sublink">乳霜</a>
-                        <a href="product.html?category=diffuser" class="drawer-sublink">擴香</a>
+                        <a href="product.html?category=3c" class="drawer-sublink">3C 科技</a>
+                        <a href="product.html?category=smart-home" class="drawer-sublink">智慧家電</a>
+                        <a href="product.html?category=lifestyle" class="drawer-sublink">生活周邊</a>
                     </div>
                 </div>
 
@@ -77,160 +75,200 @@
         </div>
     </header>
 
-    <main class="product-list-page">
-        <section class="product-list-hero">
-            <div class="product-list-hero-content">
-                <span class="product-list-kicker">ALL PRODUCTS</span>
-                <h1>探索日常中的療癒選品</h1>
-                <p>以香氣、保養與空間儀式感為靈感，精選適合日常使用的質感商品。</p>
-            </div>
-        </section>
+    <!-- 側邊欄位置切換控制列 -->
+    <div class="layout-controls">
+        <span class="layout-controls-label">導覽列位置：</span>
+        <button class="layout-btn active" id="btnSidebarLeft" onclick="setSidebar('left')">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                <rect x="0" y="0" width="4" height="14" rx="1" fill="currentColor"/>
+                <rect x="6" y="0" width="8" height="14" rx="1" fill="currentColor" opacity="0.3"/>
+            </svg>
+            左側
+        </button>
+        <button class="layout-btn" id="btnSidebarRight" onclick="setSidebar('right')">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                <rect x="10" y="0" width="4" height="14" rx="1" fill="currentColor"/>
+                <rect x="0" y="0" width="8" height="14" rx="1" fill="currentColor" opacity="0.3"/>
+            </svg>
+            右側
+        </button>
+        <button class="layout-btn" id="btnSidebarHide" onclick="setSidebar('hide')">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                <rect x="0" y="0" width="14" height="14" rx="1" fill="currentColor" opacity="0.3"/>
+            </svg>
+            隱藏
+        </button>
+    </div>
 
-        <section class="product-list-toolbar">
-            <div class="product-list-categories">
-                <button class="category-chip active" type="button" data-category="all">所有商品</button>
-                <button class="category-chip" type="button" data-category="fragrance">香氛</button>
-                <button class="category-chip" type="button" data-category="essential-oil">精油</button>
-                <button class="category-chip" type="button" data-category="cream">乳霜</button>
-                <button class="category-chip" type="button" data-category="diffuser">擴香</button>
-            </div>
+    <main class="product-layout product-layout--sidebar-left" id="productLayout">
+        
+        <aside class="product-sidebar" id="productSidebar">
+            <h3 class="sidebar-title">快速導覽</h3>
+            <ul class="sidebar-list">
+                <li><a href="product.html?category=all" class="active">最新商品</a></li>
+                <li><a href="product.html?category=all">熱銷排行</a></li>
+                <li><a href="product.html?category=3c">3C 科技</a></li>
+                <li><a href="product.html?category=smart-home">智慧家電</a></li>
+                <li><a href="product.html?category=lifestyle">生活周邊</a></li>
+                <li><a href="#footer">售後服務</a></li>
+            </ul>
+        </aside>
 
-            <div class="product-list-meta">
-                <span>共 8 項商品</span>
-            </div>
-        </section>
+        <div class="product-main">
+            <section class="product-list-hero">
+                <div class="product-list-hero-content">
+                    <span class="product-list-kicker">ALL PRODUCTS</span>
+                    <h1>探索科技與生活的<br>理想選品</h1>
+                    <p>從行動裝置、智慧家電到日常周邊，快速找到符合需求的熱門商品。</p>
+                </div>
+            </section>
 
-        <section class="product-list-section">
-            <div class="product-list-grid">
-                <a href="../product-detail/product-detail.html" class="list-product-card" data-category="essential-oil">
-                    <div class="list-product-image">
-                        <img src="images/rec1.jpg" alt="沉靜助眠精油">
-                    </div>
-                    <div class="list-product-body">
-                        <span class="list-product-tag">精油</span>
-                        <h3>沉靜助眠精油</h3>
-                        <p>放鬆身心，打造療癒睡前時光。</p>
-                        <div class="list-product-footer">
-                            <span class="list-product-price">NT$ 599</span>
-                            <span class="list-product-link">查看商品 &rarr;</span>
+            <section class="product-list-toolbar">
+                <div class="product-list-categories">
+                    <button class="category-chip active" type="button" data-category="all">所有商品</button>
+                    <button class="category-chip" type="button" data-category="3c">3C 科技</button>
+                    <button class="category-chip" type="button" data-category="smart-home">智慧家電</button>
+                    <button class="category-chip" type="button" data-category="lifestyle">生活周邊</button>
+                    <button class="category-chip" type="button" data-category="hot">熱門推薦</button>
+                </div>
+
+                <div class="product-list-meta">
+                    <span>共 8 項商品</span>
+                </div>
+            </section>
+
+            <section class="product-list-section">
+                <div class="product-list-grid">
+                    <a href="../product-detail/product-detail.html" class="list-product-card" data-category="3c">
+                        <div class="list-product-image">
+                            <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&q=80" alt="智能手錶 Pro">
                         </div>
-                    </div>
-                </a>
-
-                <a href="../product-detail/product-detail.html" class="list-product-card" data-category="cream">
-                    <div class="list-product-image">
-                        <img src="images/rec2.jpg" alt="植萃保濕乳霜">
-                    </div>
-                    <div class="list-product-body">
-                        <span class="list-product-tag">乳霜</span>
-                        <h3>植萃保濕乳霜</h3>
-                        <p>輕盈不黏膩，日常溫和修護。</p>
-                        <div class="list-product-footer">
-                            <span class="list-product-price">NT$ 1280</span>
-                            <span class="list-product-link">查看商品 &rarr;</span>
+                        <div class="list-product-body">
+                            <span class="list-product-tag">3C 科技</span>
+                            <h3>智能手錶 Pro</h3>
+                            <p>全天候健康追蹤，結合簡約設計與日常效率。</p>
+                            <div class="list-product-footer">
+                                <span class="list-product-price">NT$ 8,900</span>
+                                <span class="list-product-link">查看商品 &rarr;</span>
+                            </div>
                         </div>
-                    </div>
-                </a>
+                    </a>
 
-                <a href="../product-detail/product-detail.html" class="list-product-card" data-category="cream">
-                    <div class="list-product-image">
-                        <img src="images/rec3.jpg" alt="高效鎖水面霜">
-                    </div>
-                    <div class="list-product-body">
-                        <span class="list-product-tag">乳霜</span>
-                        <h3>高效鎖水面霜</h3>
-                        <p>深層滋養，強化肌膚保水屏障。</p>
-                        <div class="list-product-footer">
-                            <span class="list-product-price">NT$ 980</span>
-                            <span class="list-product-link">查看商品 &rarr;</span>
+                    <a href="../product-detail/product-detail.html" class="list-product-card" data-category="3c">
+                        <div class="list-product-image">
+                            <img src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?auto=format&fit=crop&q=80&w=400" alt="無線耳機 ANC">
                         </div>
-                    </div>
-                </a>
-
-                <a href="../product-detail/product-detail.html" class="list-product-card" data-category="diffuser">
-                    <div class="list-product-image">
-                        <img src="images/rec4.jpg" alt="靜謐森林擴香精油">
-                    </div>
-                    <div class="list-product-body">
-                        <span class="list-product-tag">擴香</span>
-                        <h3>靜謐森林擴香精油</h3>
-                        <p>在日常之中，留一段屬於自己的寧靜。</p>
-                        <div class="list-product-footer">
-                            <span class="list-product-price">NT$ 680</span>
-                            <span class="list-product-link">查看商品 &rarr;</span>
+                        <div class="list-product-body">
+                            <span class="list-product-tag">3C 科技</span>
+                            <h3>無線耳機 ANC</h3>
+                            <p>主動降噪與清晰通話，帶來沉浸式音樂體驗。</p>
+                            <div class="list-product-footer">
+                                <span class="list-product-price">NT$ 5,490</span>
+                                <span class="list-product-link">查看商品 &rarr;</span>
+                            </div>
                         </div>
-                    </div>
-                </a>
+                    </a>
 
-                <a href="../product-detail/product-detail.html" class="list-product-card" data-category="cream">
-                    <div class="list-product-image">
-                        <img src="images/rec5.jpg" alt="柑橘亮澤保濕面霜">
-                    </div>
-                    <div class="list-product-body">
-                        <span class="list-product-tag">乳霜</span>
-                        <h3>柑橘亮澤保濕面霜</h3>
-                        <p>輕盈不黏膩，日常保養的安心選擇。</p>
-                        <div class="list-product-footer">
-                            <span class="list-product-price">NT$ 980</span>
-                            <span class="list-product-link">查看商品 &rarr;</span>
+                    <a href="../product-detail/product-detail.html" class="list-product-card" data-category="smart-home">
+                        <div class="list-product-image">
+                            <img src="https://vader-prod.s3.amazonaws.com/1735902638-img-1136-6777c5a59e357.jpg" alt="智慧空氣清淨機">
                         </div>
-                    </div>
-                </a>
-
-                <a href="../product-detail/product-detail.html" class="list-product-card" data-category="fragrance">
-                    <div class="list-product-image">
-                        <img src="images/rec1.jpg" alt="晨霧花園香氛">
-                    </div>
-                    <div class="list-product-body">
-                        <span class="list-product-tag">香氛</span>
-                        <h3>晨霧花園香氛</h3>
-                        <p>淡雅香氣，適合日常空間與放鬆時刻。</p>
-                        <div class="list-product-footer">
-                            <span class="list-product-price">NT$ 760</span>
-                            <span class="list-product-link">查看商品 &rarr;</span>
+                        <div class="list-product-body">
+                            <span class="list-product-tag">智慧家電</span>
+                            <h3>智慧空氣清淨機</h3>
+                            <p>智慧感測空氣品質，維持居家清新舒適。</p>
+                            <div class="list-product-footer">
+                                <span class="list-product-price">NT$ 12,800</span>
+                                <span class="list-product-link">查看商品 &rarr;</span>
+                            </div>
                         </div>
-                    </div>
-                </a>
+                    </a>
 
-                <a href="../product-detail/product-detail.html" class="list-product-card" data-category="fragrance">
-                    <div class="list-product-image">
-                        <img src="images/rec2.jpg" alt="白茶木質香氛">
-                    </div>
-                    <div class="list-product-body">
-                        <span class="list-product-tag">香氛</span>
-                        <h3>白茶木質香氛</h3>
-                        <p>乾淨柔和的氣息，帶來沉靜舒適的氛圍。</p>
-                        <div class="list-product-footer">
-                            <span class="list-product-price">NT$ 880</span>
-                            <span class="list-product-link">查看商品 &rarr;</span>
+                    <a href="../product-detail/product-detail.html" class="list-product-card" data-category="smart-home">
+                        <div class="list-product-image">
+                            <img src="https://www.koc.com.tw/wp-content/uploads/2024/04/20240411145108_0_676120.jpg" alt="智能檯燈 Plus">
                         </div>
-                    </div>
-                </a>
-
-                <a href="../product-detail/product-detail.html" class="list-product-card" data-category="diffuser">
-                    <div class="list-product-image">
-                        <img src="images/rec4.jpg" alt="木質擴香禮盒">
-                    </div>
-                    <div class="list-product-body">
-                        <span class="list-product-tag">擴香</span>
-                        <h3>木質擴香禮盒</h3>
-                        <p>適合作為送禮與日常空間佈置的質感選品。</p>
-                        <div class="list-product-footer">
-                            <span class="list-product-price">NT$ 1380</span>
-                            <span class="list-product-link">查看商品 &rarr;</span>
+                        <div class="list-product-body">
+                            <span class="list-product-tag">智慧家電</span>
+                            <h3>智能檯燈 Plus</h3>
+                            <p>多段色溫調節，兼顧閱讀、工作與空間氣氛。</p>
+                            <div class="list-product-footer">
+                                <span class="list-product-price">NT$ 2,680</span>
+                                <span class="list-product-link">查看商品 &rarr;</span>
+                            </div>
                         </div>
-                    </div>
-                </a>
-            </div>
+                    </a>
 
-            <div class="pagination">
-                <a href="#" class="page-arrow disabled">&larr;</a>
-                <a href="#" class="page-number active">1</a>
-                <a href="#" class="page-number">2</a>
-                <a href="#" class="page-number">3</a>
-                <a href="#" class="page-arrow">&rarr;</a>
-            </div>
-        </section>
+                    <a href="../product-detail/product-detail.html" class="list-product-card" data-category="lifestyle">
+                        <div class="list-product-image">
+                            <img src="https://dlcdnwebimgs.asus.com/gain/8F0AC3F5-1D70-41A5-88F3-3B03F62FA78F/w1000/h732" alt="多功能充電座">
+                        </div>
+                        <div class="list-product-body">
+                            <span class="list-product-tag">生活周邊</span>
+                            <h3>多功能充電座</h3>
+                            <p>整合手機、耳機與手錶充電，桌面更俐落有序。</p>
+                            <div class="list-product-footer">
+                                <span class="list-product-price">NT$ 1,980</span>
+                                <span class="list-product-link">查看商品 &rarr;</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="../product-detail/product-detail.html" class="list-product-card" data-category="lifestyle">
+                        <div class="list-product-image">
+                            <img src="https://img.skmonline.com.tw/App_Images/727/ERPItem/2026/0120/9adb17dc-080e-48c6-84bf-67b871bc12b5_7846649.webp" alt="攜帶式藍牙音響">
+                        </div>
+                        <div class="list-product-body">
+                            <span class="list-product-tag">生活周邊</span>
+                            <h3>攜帶式藍牙音響</h3>
+                            <p>小巧機身與飽滿音色，居家與戶外都好帶。</p>
+                            <div class="list-product-footer">
+                                <span class="list-product-price">NT$ 3,290</span>
+                                <span class="list-product-link">查看商品 &rarr;</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="../product-detail/product-detail.html" class="list-product-card" data-category="hot">
+                        <div class="list-product-image">
+                            <img src="https://laptop-bidianzhi.com/wp-content/uploads/2025/04/%E8%8F%AF%E7%A2%A9%E5%95%86%E7%94%A8%E7%AD%86%E9%9B%BB%E9%81%B8%E8%B3%BC%E6%8C%87%E5%8D%97_%E9%AB%98%E6%95%88%E8%83%BD_%E8%BB%8D%E8%A6%8F%E8%80%90%E7%94%A8_%E8%B3%87%E5%AE%89%E5%8D%87%E7%B4%9A_%E6%BB%BF%E8%B6%B3%E4%BD%A03%E5%A4%A7%E5%95%86%E5%8B%99%E9%9C%80%E6%B1%82_cleaned.png" alt="輕薄商務筆電">
+                        </div>
+                        <div class="list-product-body">
+                            <span class="list-product-tag">熱門推薦</span>
+                            <h3>輕薄商務筆電</h3>
+                            <p>高效處理與輕薄便攜設計，工作娛樂都順手。</p>
+                            <div class="list-product-footer">
+                                <span class="list-product-price">NT$ 29,800</span>
+                                <span class="list-product-link">查看商品 &rarr;</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="../product-detail/product-detail.html" class="list-product-card" data-category="hot">
+                        <div class="list-product-image">
+                            <img src="https://3c.yipee.cc/wp-content/uploads/2025/04/1-ASUS-ProArt-Display-OLED-PA32UCDM.jpg" alt="4K 智慧螢幕">
+                        </div>
+                        <div class="list-product-body">
+                            <span class="list-product-tag">熱門推薦</span>
+                            <h3>4K 智慧螢幕</h3>
+                            <p>高解析畫質與多工顯示，提升工作與娛樂品質。</p>
+                            <div class="list-product-footer">
+                                <span class="list-product-price">NT$ 15,990</span>
+                                <span class="list-product-link">查看商品 &rarr;</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="pagination">
+                    <a href="#" class="page-arrow disabled">&larr;</a>
+                    <a href="#" class="page-number active">1</a>
+                    <a href="#" class="page-number">2</a>
+                    <a href="#" class="page-number">3</a>
+                    <a href="#" class="page-arrow">&rarr;</a>
+                </div>
+            </section>
+        </div>
     </main>
 
     <footer id="footer" class="footer-main">
@@ -242,7 +280,7 @@
             <div class="footer-links-grid">
                 <div class="footer-column">
                     <h4>Brand Name</h4>
-                    <p>致力於提供高品質產品，結合設計與生活美學，打造舒適且有質感的日常體驗。</p>
+                    <p>提供多元 3C 與生活科技商品，整合熱門品牌與精選品類，打造更直覺的選購體驗。</p>
                 </div>
 
                 <div class="footer-column">
@@ -295,9 +333,42 @@
             drawerDropdownToggle.classList.toggle('active');
             drawerSubmenu.classList.toggle('active');
         });
-    </script>
 
-    <script>
+        function setSidebar(position) {
+            const layout = document.getElementById('productLayout');
+            const sidebar = document.getElementById('productSidebar');
+            const btnLeft = document.getElementById('btnSidebarLeft');
+            const btnRight = document.getElementById('btnSidebarRight');
+            const btnHide = document.getElementById('btnSidebarHide');
+
+            layout.classList.remove('product-layout--sidebar-left', 'product-layout--sidebar-right');
+            btnLeft.classList.remove('active');
+            btnRight.classList.remove('active');
+            btnHide.classList.remove('active');
+
+            if (position === 'left') {
+                layout.classList.add('product-layout--sidebar-left');
+                sidebar.style.display = '';
+                btnLeft.classList.add('active');
+            } else if (position === 'right') {
+                layout.classList.add('product-layout--sidebar-right');
+                sidebar.style.display = '';
+                btnRight.classList.add('active');
+            } else {
+                sidebar.style.display = 'none';
+                btnHide.classList.add('active');
+            }
+
+            try { localStorage.setItem('productSidebarPosition', position); } catch(e) {}
+        }
+
+        try {
+            const saved = localStorage.getItem('productSidebarPosition') || 'left';
+            setSidebar(saved);
+        } catch(e) {
+            setSidebar('left');
+        }
+
         const categoryButtons = document.querySelectorAll('.category-chip');
         const productCards = document.querySelectorAll('.list-product-card');
         const productCount = document.querySelector('.product-list-meta span');
@@ -312,7 +383,6 @@
 
             productCards.forEach(card => {
                 const cardCategory = card.dataset.category;
-
                 if (currentCategory === 'all' || cardCategory === currentCategory) {
                     card.style.display = 'block';
                     visibleCount++;

@@ -26,13 +26,11 @@
                 <a href="../about/about.html">品牌故事</a>
 
                 <div class="nav-dropdown">
-                    <a href="../Product/product.html" class="nav-dropdown-trigger">商品</a>
+                    <a href="../Product/product.html" class="drawer-sublink">商品</a>
                     <div class="nav-dropdown-menu">
-                         <a href="../Product/product.html" class="drawer-sublink">所有商品</a>
-                        <a href="../Product/product.html?category=fragrance" class="drawer-sublink">香氛</a>
-                        <a href="../Product/product.html?category=essential-oil" class="drawer-sublink">精油</a>
-                        <a href="../Product/product.html?category=cream" class="drawer-sublink">乳霜</a>
-                        <a href="../Product/product.html?category=diffuser" class="drawer-sublink">擴香</a>
+                        <a href="#" class="drawer-sublink">所有商品</a>
+                        <a href="#" class="drawer-sublink">3C 科技</a>
+                        <a href="#" class="drawer-sublink">智慧家電</a>
                     </div>
                 </div>
 
@@ -48,153 +46,165 @@
 
         <div class="mobile-drawer" id="mobileDrawer">
             <div class="mobile-drawer-inner">
-                <a href="../index/index.html" class="drawer-link active">首頁</a>
-                <a href="../about/about.html" class="drawer-link">品牌故事</a>
-
+                <a href="index.html" class="drawer-link active">首頁</a>
+                <a href="#" class="drawer-link">品牌故事</a>
                 <div class="drawer-dropdown">
-                    <button class="drawer-dropdown-toggle" id="drawerDropdownToggle" type="button">
-                        商品分類
-                        <span class="drawer-arrow">⌄</span>
-                    </button>
-
-                    <div class="drawer-submenu active" id="drawerSubmenu">
-                        <a href="../Product/product.html" class="drawer-sublink">所有商品</a>
-                        <a href="../Product/product.html?category=fragrance" class="drawer-sublink">香氛</a>
-                        <a href="../Product/product.html?category=essential-oil" class="drawer-sublink">精油</a>
-                        <a href="../Product/product.html?category=cream" class="drawer-sublink">乳霜</a>
-                        <a href="../Product/product.html?category=diffuser" class="drawer-sublink">擴香</a>
+                    <button class="drawer-dropdown-toggle" id="drawerDropdownToggle">商品分類 <span class="drawer-arrow">⌄</span></button>
+                    <div class="drawer-submenu" id="drawerSubmenu">
+                        <a href="#" class="drawer-sublink">所有商品</a>
+                        <a href="#" class="drawer-sublink">熱門推薦</a>
                     </div>
                 </div>
-
                 <a href="#footer" class="drawer-link">聯絡我們</a>
-
-                <div class="mobile-drawer-icons">
-                    <a href="#">🔍 搜尋商品</a>
-                    <a href="#">會員</a>
-                    <a href="#">🛒購物車 (2)</a>
-                </div>
             </div>
         </div>
     </header>
 
-    <section class="hero-section">
-        <div class="hero-slider" id="heroSlider">
+    <!-- 側邊欄位置切換控制列 -->
+    <div class="layout-controls">
+        <span class="layout-controls-label">導覽列位置：</span>
+        <button class="layout-btn active" id="btnSidebarLeft" onclick="setSidebar('left')">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                <rect x="0" y="0" width="4" height="14" rx="1" fill="currentColor"/>
+                <rect x="6" y="0" width="8" height="14" rx="1" fill="currentColor" opacity="0.3"/>
+            </svg>
+            左側
+        </button>
+        <button class="layout-btn" id="btnSidebarRight" onclick="setSidebar('right')">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                <rect x="10" y="0" width="4" height="14" rx="1" fill="currentColor"/>
+                <rect x="0" y="0" width="8" height="14" rx="1" fill="currentColor" opacity="0.3"/>
+            </svg>
+            右側
+        </button>
+        <button class="layout-btn" id="btnSidebarHide" onclick="setSidebar('hide')">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                <rect x="0" y="0" width="14" height="14" rx="1" fill="currentColor" opacity="0.3"/>
+            </svg>
+            隱藏
+        </button>
+    </div>
 
-            <div class="hero-slide">
-                <div class="hero-container">
-                    <div class="hero-content">
-                        <h1 style="color: #8d7365;">沉靜香氣，<br>回到生活本質</h1>
-                        <p>以簡約美學與溫潤木質調，<br>為日常帶來剛剛好的安定感。</p>
-                        <button class="hero-btn" onclick="location.href='../Product/product.html'">立即加入</button>
-                    </div>
-                    <div class="hero-image">
-                        <img src="images/hero-image.jpg" alt="Hero Product">
-                    </div>
-                </div>
-            </div>
+    <main class="index-layout index-layout--sidebar-left" id="indexLayout">
 
-            <div class="hero-slide slide-2" style="background-color: #EBE3E7;">
-                <div class="hero-container">
-                    <div class="hero-image">
-                        <img src="images/hero-image3.png" alt="熱銷精選">
-                    </div>
-                    <div class="hero-content">
-                        <h1 style="color: #888;">熱銷精選，<br>為生活點綴儀式感</h1>
-                        <p>精選人氣香氛組合，打造您的療癒時光。</p>
-                        <button class="hero-btn" onclick="location.href='../Product/product.html'">查看精選</button>
-                    </div>
-                </div>
-            </div>
+        <aside class="index-sidebar" id="indexSidebar">
+            <h3 class="sidebar-title">快速導覽</h3>
+            <ul class="sidebar-list">
+                <li><a href="../Product/product.html?category=all" class="active">最新商品</a></li>
+                <li><a href="../Product/product.html?category=all">熱銷排行</a></li>
+                <li><a href="../Product/product.html?category=3c">3C 科技</a></li>
+                <li><a href="../Product/product.html?category=smart-home">智慧家電</a></li>
+                <li><a href="../Product/product.html?category=lifestyle">生活周邊</a></li>
+                <li><a href="#footer">售後服務</a></li>
+            </ul>
+        </aside>
 
-            <div class="hero-slide" style="background-color: #f8edea;">
-                <div class="hero-container">
-                    <div class="hero-content">
-                        <h1 style="color: #8d7365;">專屬會員，<br>享受獨家優惠</h1>
-                        <p>立即加入我們，獲得最新活動通知與首購驚喜。</p>
-                        <button class="hero-btn" style="background-color: #b89f8d;" onclick="location.href='../about/about.html'">立即加入</button>
-                    </div>
-                    <div class="hero-image">
-                        <img src="images/hero-image2.png" alt="專屬會員">
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <section class="featured-section">
-        <div class="section-title">
-            <h2>本週精選</h2>
-            <p>嚴選人氣香氛商品</p>
-        </div>
-        <div class="featured-grid">
-            <a href="../product-detail/product-detail.html" class="product-card">
-                <div class="card-img-wrapper">
-                    <img src="images/prod1.jpg" alt="產品 1">
-                </div>
-                <div class="card-body">
-                    <h3>植萃保濕乳霜</h3>
-                    <p>輕盈不黏膩，日常溫和修護</p>
-                    <div class="card-footer">
-                        <span class="price">NT$ 1280</span>
-                        <span class="view-link">查看商品 &rarr;</span>
-                    </div>
-                </div>
-            </a>
-            <a href="../product-detail/product-detail.html" class="product-card">
-                <div class="card-img-wrapper">
-                    <img src="images/prod2.jpg" alt="產品 2">
-                </div>
-                <div class="card-body">
-                    <h3>高效鎖水面霜</h3>
-                    <p>深層滋養，強化肌膚保水屏障</p>
-                    <div class="card-footer">
-                        <span class="price">NT$ 980</span>
-                        <span class="view-link">查看商品 &rarr;</span>
-                    </div>
-                </div>
-            </a>
-            <a href="../product-detail/product-detail.html" class="product-card">
-                <div class="card-img-wrapper">
-                    <img src="images/prod3.jpg" alt="產品 3">
-                </div>
-                <div class="card-body">
-                    <h3>沉靜助眠精油</h3>
-                    <p>放鬆身心，打造療癒睡前時光</p>
-                    <div class="card-footer">
-                        <span class="price">NT$ 599</span>
-                        <span class="view-link">查看商品 &rarr;</span>
-                    </div>
-                </div>
-            </a>
-        </div>
-    </section>
-
-    <section class="category-section">
-        <div class="section-title">
-            <h2>商品分類</h2>
-            <p>快速找到你需要的商品</p>
-        </div>
-        <div class="category-grid">
-            <a href="../Product/product.html?category=fragrance" class="category-item">
-                <img src="images/cat1.jpg" alt="香氛">
-                <span class="category-label">香氛</span>
-            </a>
-            <a href="../Product/product.html?category=essential-oil" class="category-item">
-                <img src="images/cat2.jpg" alt="精油">
-                <span class="category-label">精油</span>
-            </a>
-            <a href="../Product/product.html?category=cream" class="category-item">
-                <img src="images/cat3.jpg" alt="乳霜">
-                <span class="category-label">乳霜</span>
-            </a>
-            <a href="../Product/product.html?category=diffuser" class="category-item">
-                <img src="images/cat4.jpg" alt="擴香">
-                <span class="category-label">擴香</span>
-            </a>
+        <div class="index-main">
             
+            <section class="hero-section">
+                <div class="hero-slider" id="heroSlider">
+
+                    <div class="hero-slide">
+                        <div class="hero-container">
+                            <div class="hero-content">
+                                <h1>科技生活，<br>重新定義</h1>
+                                <p>探索最新電子產品，體驗前所未有的智能效率。</p>
+                                <button class="hero-btn" onclick="location.href='../Product/product.html'">了解更多</button>
+                            </div>
+                            <div class="hero-image">
+                                <img src="https://images.unsplash.com/photo-1498049794561-7780e7231661?auto=format&fit=crop&q=80" alt="科技生活">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="hero-slide">
+                        <div class="hero-container">
+                            <div class="hero-content">
+                                <h1>熱門裝置，<br>一次到位</h1>
+                                <p>從耳機、螢幕到筆電，快速找到最適合你的科技選品。</p>
+                                <button class="hero-btn" onclick="location.href='../Product/product.html'">立即選購</button>
+                            </div>
+                            <div class="hero-image">
+                                <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80" alt="熱門裝置">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="hero-slide">
+                        <div class="hero-container">
+                            <div class="hero-content">
+                                <h1>智慧效率，<br>全面升級</h1>
+                                <p>以更清楚的分類與更直覺的選購流程，打造理想科技生活。</p>
+                                <button class="hero-btn" onclick="location.href='../Product/product.html'">查看商品</button>
+                            </div>
+                            <div class="hero-image">
+                                <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&q=80" alt="智慧效率">
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <section class="section-title">
+                <h2>熱門商品</h2>
+                <p>人氣精選，品質保證</p>
+            </section>
+            
+            <div class="featured-grid">
+                <a href="../product-detail/product-detail.html" class="product-card">
+                    
+                        <div class="card-img-wrapper"><img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&q=80" alt="Product"></div>
+                        <div class="card-body">
+                            <h3>智能手錶 Pro</h3>
+                            <p>全天候健康追蹤，簡約設計感。</p>
+                            <div class="card-footer">
+                                <span class="price">NT$ 8,900</span>
+                                <span class="view-link">查看詳情</span>
+                            </div>
+                        </div>
+                    
+                </a>
+                <a href="../product-detail/product-detail.html" class="product-card">
+                    
+                        <div class="card-img-wrapper"><img src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?auto=format&fit=crop&q=80" alt="Product"></div>
+                        <div class="card-body">
+                            <h3>無線耳機 ANC</h3>
+                            <p>主動降噪，沉浸音樂體驗。</p>
+                            <div class="card-footer">
+                                <span class="price">NT$ 5,490</span>
+                                <span class="view-link">查看詳情</span>
+                            </div>
+                        </div>
+                    
+                    
+                </a>
+                <a href="../product-detail/product-detail.html" class="product-card">   
+                        <div class="card-img-wrapper"><img src="https://3c.yipee.cc/wp-content/uploads/2025/04/1-ASUS-ProArt-Display-OLED-PA32UCDM.jpg" alt="Product"></div>
+                        <div class="card-body">
+                            <h3>4K 智慧螢幕</h3>
+                            <p>高解析畫質與多工顯示，提升工作與娛樂品質。</p>
+                            <div class="card-footer">
+                                <span class="price">NT$ 15,900</span>
+                                <span class="view-link">查看詳情</span>
+                            </div>
+                        </div>
+                    
+                </a>
+                <a href="../product-detail/product-detail.html" class="product-card">
+                        <div class="card-img-wrapper"><img src="https://laptop-bidianzhi.com/wp-content/uploads/2025/04/%E8%8F%AF%E7%A2%A9%E5%95%86%E7%94%A8%E7%AD%86%E9%9B%BB%E9%81%B8%E8%B3%BC%E6%8C%87%E5%8D%97_%E9%AB%98%E6%95%88%E8%83%BD_%E8%BB%8D%E8%A6%8F%E8%80%90%E7%94%A8_%E8%B3%87%E5%AE%89%E5%8D%87%E7%B4%9A_%E6%BB%BF%E8%B6%B3%E4%BD%A03%E5%A4%A7%E5%95%86%E5%8B%99%E9%9C%80%E6%B1%82_cleaned.png" alt="Product"></div>
+                        <div class="card-body">
+                            <h3>輕薄商務筆電</h3>
+                            <p>高效能處理器，輕薄便攜。</p>
+                            <div class="card-footer">
+                                <span class="price">NT$ 12,900</span>
+                                <span class="view-link">查看詳情</span>
+                            </div>
+                        </div>
+                </a>
+            </div>
         </div>
-    </section>
+    </main>
 
     <footer id="footer" class="footer-main">
         <div class="footer-top-container">
@@ -235,90 +245,82 @@
             © 2026 Brand Name. All rights reserved.
         </div>
     </footer>
+    
+
 
     <script>
-        let currentSlide = 0;
-        const slider = document.getElementById('heroSlider');
-        const totalSlides = 3;
-
-        function nextSlide() {
-            currentSlide = (currentSlide + 1) % totalSlides;
-            const offset = currentSlide * (100 / totalSlides);
-            slider.style.transform = `translateX(-${offset}%)`;
-        }
-
-        setInterval(nextSlide, 4000);
-    </script>
-
-    <script>
+        // ── 漢堡選單 ──
         const menuToggle = document.getElementById('menuToggle');
         const mobileDrawer = document.getElementById('mobileDrawer');
-        const drawerDropdownToggle = document.getElementById('drawerDropdownToggle');
-        const drawerSubmenu = document.getElementById('drawerSubmenu');
-
         menuToggle.addEventListener('click', () => {
             menuToggle.classList.toggle('active');
             mobileDrawer.classList.toggle('active');
-
-            const isExpanded = menuToggle.classList.contains('active');
-            menuToggle.setAttribute('aria-expanded', isExpanded ? 'true' : 'false');
         });
 
-        drawerDropdownToggle.addEventListener('click', () => {
-            drawerDropdownToggle.classList.toggle('active');
-            drawerSubmenu.classList.toggle('active');
-        });
+        // ── 抽屜子選單 ──
+        const drawerDropdownToggle = document.getElementById('drawerDropdownToggle');
+        const drawerSubmenu = document.getElementById('drawerSubmenu');
+        if (drawerDropdownToggle) {
+            drawerDropdownToggle.addEventListener('click', () => {
+                drawerDropdownToggle.classList.toggle('active');
+                drawerSubmenu.classList.toggle('active');
+            });
+        }
+
+        // ── Sidebar 左/右/隱藏 切換 ──
+        function setSidebar(position) {
+            const layout = document.getElementById('indexLayout');
+            const sidebar = document.getElementById('indexSidebar');
+            const btnLeft = document.getElementById('btnSidebarLeft');
+            const btnRight = document.getElementById('btnSidebarRight');
+            const btnHide = document.getElementById('btnSidebarHide');
+
+            layout.classList.remove('index-layout--sidebar-left', 'index-layout--sidebar-right');
+            btnLeft.classList.remove('active');
+            btnRight.classList.remove('active');
+            btnHide.classList.remove('active');
+
+            if (position === 'left') {
+                layout.classList.add('index-layout--sidebar-left');
+                sidebar.style.display = '';
+                btnLeft.classList.add('active');
+            } else if (position === 'right') {
+                layout.classList.add('index-layout--sidebar-right');
+                sidebar.style.display = '';
+                btnRight.classList.add('active');
+            } else {
+                sidebar.style.display = 'none';
+                btnHide.classList.add('active');
+            }
+
+            try { localStorage.setItem('sidebarPosition', position); } catch(e) {}
+        }
+
+        // 讀取上次設定
+        try {
+            const saved = localStorage.getItem('sidebarPosition') || 'left';
+            setSidebar(saved);
+        } catch(e) {
+            setSidebar('left');
+        }
     </script>
 
     <script>
-        const categoryButtons = document.querySelectorAll('.category-chip');
-        const productCards = document.querySelectorAll('.list-product-card');
-        const productCount = document.querySelector('.product-list-meta span');
+    const heroSlider = document.getElementById('heroSlider');
+    const heroSlides = document.querySelectorAll('.hero-slide');
+    let heroIndex = 0;
+    const heroTotal = heroSlides.length;
 
-        function normalizeCategory(category) {
-            return category && category.trim() ? category : 'all';
-        }
+    function updateHeroSlider() {
+        heroSlider.style.transform = `translateX(-${heroIndex * 100}%)`;
+    }
 
-        function filterProducts(category, updateUrl = true) {
-            const currentCategory = normalizeCategory(category);
-            let visibleCount = 0;
+    function nextHeroSlide() {
+        heroIndex = (heroIndex + 1) % heroTotal;
+        updateHeroSlider();
+    }
 
-            productCards.forEach(card => {
-                const cardCategory = card.dataset.category;
-
-                if (currentCategory === 'all' || cardCategory === currentCategory) {
-                    card.style.display = 'block';
-                    visibleCount++;
-                } else {
-                    card.style.display = 'none';
-                }
-            });
-
-            if (productCount) {
-                productCount.textContent = `共 ${visibleCount} 項商品`;
-            }
-
-            categoryButtons.forEach(button => {
-                button.classList.toggle('active', button.dataset.category === currentCategory);
-            });
-
-            if (updateUrl) {
-                const url = new URL(window.location.href);
-                url.searchParams.set('category', currentCategory);
-                window.history.replaceState({}, '', url);
-            }
-        }
-
-        categoryButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                filterProducts(button.dataset.category);
-            });
-        });
-
-        const params = new URLSearchParams(window.location.search);
-        const initialCategory = params.get('category') || 'all';
-        filterProducts(initialCategory, false);
-    </script>
-
+    setInterval(nextHeroSlide, 4000);
+</script>
 </body>
 </html>

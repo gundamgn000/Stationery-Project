@@ -12,7 +12,7 @@
     border-radius: 24px;
     padding: 40px;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1.1fr 0.9fr;
     gap: 40px;
 }
 
@@ -55,17 +55,32 @@
     justify-content: flex-start;
 }
 
-.product-title {
-    font-size: 28px;
+.product-badge {
+    display: inline-flex;
+    align-items: center;
+    width: fit-content;
+    padding: 6px 12px;
+    margin-bottom: 14px;
+    border-radius: 999px;
+    background-color: #f6f1ec;
+    color: #8B6B4A;
+    font-size: 12px;
     font-weight: 500;
+}
+
+.product-title {
+    font-size: 30px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
     margin-bottom: 10px;
-    line-height: 1.4;
+    line-height: 1.35;
 }
 
 .product-price {
-    font-size: 20px;
+    font-size: 22px;
     color: #a88a6d;
     margin-bottom: 25px;
+    font-weight: 700;
 }
 
 .product-description {
@@ -252,6 +267,120 @@
     font-size: 12px;
     color: #999;
     white-space: nowrap;
+}
+
+/* ==========================================================================
+   Product List Layout
+   ========================================================================== */
+.layout-controls {
+    max-width: 1400px;
+    margin: 20px auto 16px;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.layout-controls-label {
+    font-size: 13px;
+    color: #888;
+    margin-right: 4px;
+    flex-shrink: 0;
+}
+
+.layout-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 14px;
+    font-size: 13px;
+    font-family: 'Noto Sans TC', sans-serif;
+    color: #666;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.layout-btn:hover {
+    border-color: #8B6B4A;
+    color: #8B6B4A;
+}
+
+.layout-btn.active {
+    background: #8B6B4A;
+    border-color: #8B6B4A;
+    color: #fff;
+}
+
+.product-layout {
+    display: flex;
+    max-width: 1400px;
+    margin: 0 auto 40px;
+    gap: 30px;
+    padding: 0 20px 40px;
+    transition: all 0.3s ease;
+}
+
+.product-layout--sidebar-left {
+    flex-direction: row;
+}
+
+.product-layout--sidebar-right {
+    flex-direction: row-reverse;
+}
+
+.product-sidebar {
+    width: 240px;
+    flex-shrink: 0;
+    background: #fff;
+    border-radius: 16px;
+    padding: 30px 20px;
+    height: fit-content;
+    position: sticky;
+    top: 100px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+}
+
+.sidebar-title {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 25px;
+    color: #333;
+    border-left: 3px solid #8B6B4A;
+    padding-left: 12px;
+}
+
+.sidebar-list {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar-list li {
+    margin-bottom: 8px;
+}
+
+.sidebar-list a {
+    color: #666;
+    font-size: 14px;
+    display: block;
+    padding: 10px 12px;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+}
+
+.sidebar-list a:hover,
+.sidebar-list a.active {
+    background-color: #f6f1ec;
+    color: #8B6B4A;
+    transform: translateX(5px);
+    opacity: 1;
+}
+
+.product-main {
+    flex: 1;
+    min-width: 0;
 }
 
 /* ==========================================================================
@@ -609,8 +738,44 @@
         display: none;
     }
 
-    .product-list-page {
-        padding: 32px 16px 0;
+    .layout-controls {
+        padding: 0 16px;
+        margin: 16px auto 12px;
+    }
+
+    .product-layout {
+        flex-direction: column;
+        margin: 0 auto 20px;
+        padding: 0 16px 20px;
+    }
+
+    .product-sidebar {
+        width: 100%;
+        position: static;
+        box-shadow: none;
+        border: 1px solid #eee;
+        padding: 20px;
+    }
+
+    .sidebar-list {
+        display: flex;
+        overflow-x: auto;
+        gap: 10px;
+        padding-bottom: 5px;
+    }
+
+    .sidebar-list li {
+        margin-bottom: 0;
+        flex-shrink: 0;
+    }
+
+    .sidebar-list a {
+        white-space: nowrap;
+    }
+
+    .sidebar-list a:hover,
+    .sidebar-list a.active {
+        transform: none;
     }
 
     .product-list-hero {
@@ -680,6 +845,11 @@
         width: 58px;
         height: 58px;
         border-radius: 8px;
+    }
+
+    .product-badge {
+        font-size: 11px;
+        margin-bottom: 12px;
     }
 
     .product-title {
@@ -813,8 +983,54 @@
         white-space: nowrap;
     }
 
-    .product-list-page {
-        padding: 20px 12px 0;
+    .layout-controls {
+        padding: 0 16px;
+        margin: 12px auto 8px;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .product-layout {
+        flex-direction: column;
+        margin: 0 auto 20px;
+        padding: 0 16px 20px;
+        gap: 20px;
+    }
+
+    .product-sidebar {
+        width: 100%;
+        position: static;
+        box-shadow: none;
+        border: 1px solid #eee;
+        padding: 16px;
+    }
+
+    .sidebar-title {
+        font-size: 14px;
+        margin-bottom: 14px;
+    }
+
+    .sidebar-list {
+        display: flex;
+        overflow-x: auto;
+        gap: 8px;
+        padding-bottom: 4px;
+    }
+
+    .sidebar-list li {
+        margin-bottom: 0;
+        flex-shrink: 0;
+    }
+
+    .sidebar-list a {
+        white-space: nowrap;
+        padding: 8px 12px;
+        font-size: 13px;
+    }
+
+    .sidebar-list a:hover,
+    .sidebar-list a.active {
+        transform: none;
     }
 
     .product-list-hero {
@@ -990,6 +1206,15 @@
         font-size: 10px;
     }
 
+    .layout-controls {
+        padding: 0 12px;
+    }
+
+    .layout-btn {
+        font-size: 12px;
+        padding: 5px 10px;
+    }
+
     .product-list-page {
         padding: 16px 10px 0;
     }
@@ -1029,4 +1254,75 @@
         font-size: 12px;
         padding: 8px 12px;
     }
+}
+
+/* ==========================================================================
+   麵包屑
+   ========================================================================== */
+.breadcrumb-bar {
+    background: #fff;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.breadcrumb-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 12px 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: #999;
+}
+
+.breadcrumb-inner a {
+    color: #888;
+    transition: color 0.2s;
+}
+
+.breadcrumb-inner a:hover {
+    color: #8B6B4A;
+    opacity: 1;
+}
+
+.breadcrumb-sep {
+    color: #ccc;
+    font-size: 14px;
+}
+
+.breadcrumb-current {
+    color: #8B6B4A;
+    font-weight: 500;
+}
+
+/* ==========================================================================
+   數量按鈕修正（改為 button）
+   ========================================================================== */
+.qty-btn {
+    width: 34px;
+    height: 34px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    background: #fff;
+    font-size: 18px;
+    color: #666;
+    cursor: pointer;
+    transition: all 0.2s;
+    user-select: none;
+    font-family: 'Noto Sans TC', sans-serif;
+}
+
+.qty-btn:hover {
+    border-color: #8B6B4A;
+    color: #8B6B4A;
+}
+
+.qty-number {
+    min-width: 32px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 500;
 }
