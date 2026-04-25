@@ -22,3 +22,16 @@
             隱藏
         </button>
     </div>
+
+
+<aside class="product-sidebar" id="productSidebar">
+            <h3 class="sidebar-title">快速導覽</h3>
+            <ul class="sidebar-list">
+                <li><a href="product.html?category=all" class="active">最新商品</a></li>
+                <li><a href="product.html?category=all">熱銷排行</a></li>
+                <li><a href="product.html?category=3c">3C 科技</a></li>
+                <li><a href="product.html?category=smart-home">智慧家電</a></li>
+                <li><a href="product.html?category=lifestyle">生活周邊</a></li>
+                <li><a href="#footer">售後服務</a></li>
+            </ul>
+        </aside>

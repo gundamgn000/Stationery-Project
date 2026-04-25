@@ -78,6 +78,9 @@
     
 
     <main class="product-layout product-layout--sidebar-left" id="productLayout">
+        
+        
+
         <div class="product-main">
             <section class="product-list-hero">
                 <div class="product-list-hero-content">
@@ -298,87 +301,56 @@
             drawerSubmenu.classList.toggle('active');
         });
 
-        function setSidebar(position) {
-            const layout = document.getElementById('productLayout');
-            const sidebar = document.getElementById('productSidebar');
-            const btnLeft = document.getElementById('btnSidebarLeft');
-            const btnRight = document.getElementById('btnSidebarRight');
-            const btnHide = document.getElementById('btnSidebarHide');
+        document.addEventListener('DOMContentLoaded', function () {
 
-            layout.classList.remove('product-layout--sidebar-left', 'product-layout--sidebar-right');
-            btnLeft.classList.remove('active');
-            btnRight.classList.remove('active');
-            btnHide.classList.remove('active');
+            const categoryButtons = document.querySelectorAll('.category-chip');
+            const productCards = document.querySelectorAll('.list-product-card');
+            const productCount = document.querySelector('.product-list-meta span');
 
-            if (position === 'left') {
-                layout.classList.add('product-layout--sidebar-left');
-                sidebar.style.display = '';
-                btnLeft.classList.add('active');
-            } else if (position === 'right') {
-                layout.classList.add('product-layout--sidebar-right');
-                sidebar.style.display = '';
-                btnRight.classList.add('active');
-            } else {
-                sidebar.style.display = 'none';
-                btnHide.classList.add('active');
+            function normalizeCategory(category) {
+                return category && category.trim() ? category : 'all';
             }
 
-            try { localStorage.setItem('productSidebarPosition', position); } catch(e) {}
-        }
+            function filterProducts(category, updateUrl = true) {
+                const currentCategory = normalizeCategory(category);
+                let visibleCount = 0;
 
-        try {
-            const saved = localStorage.getItem('productSidebarPosition') || 'left';
-            setSidebar(saved);
-        } catch(e) {
-            setSidebar('left');
-        }
+                productCards.forEach(card => {
+                    const cardCategory = card.dataset.category;
+                    if (currentCategory === 'all' || cardCategory === currentCategory) {
+                        card.style.display = 'block';
+                        visibleCount++;
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
 
-        const categoryButtons = document.querySelectorAll('.category-chip');
-        const productCards = document.querySelectorAll('.list-product-card');
-        const productCount = document.querySelector('.product-list-meta span');
-
-        function normalizeCategory(category) {
-            return category && category.trim() ? category : 'all';
-        }
-
-        function filterProducts(category, updateUrl = true) {
-            const currentCategory = normalizeCategory(category);
-            let visibleCount = 0;
-
-            productCards.forEach(card => {
-                const cardCategory = card.dataset.category;
-                if (currentCategory === 'all' || cardCategory === currentCategory) {
-                    card.style.display = 'block';
-                    visibleCount++;
-                } else {
-                    card.style.display = 'none';
+                if (productCount) {
+                    productCount.textContent = `共 ${visibleCount} 項商品`;
                 }
-            });
 
-            if (productCount) {
-                productCount.textContent = `共 ${visibleCount} 項商品`;
+                categoryButtons.forEach(button => {
+                    button.classList.toggle('active', button.dataset.category === currentCategory);
+                });
+
+                if (updateUrl) {
+                    const url = new URL(window.location.href);
+                    url.searchParams.set('category', currentCategory);
+                    window.history.replaceState({}, '', url);
+                }
             }
 
             categoryButtons.forEach(button => {
-                button.classList.toggle('active', button.dataset.category === currentCategory);
+                button.addEventListener('click', () => {
+                    filterProducts(button.dataset.category);
+                });
             });
 
-            if (updateUrl) {
-                const url = new URL(window.location.href);
-                url.searchParams.set('category', currentCategory);
-                window.history.replaceState({}, '', url);
-            }
-        }
+            const params = new URLSearchParams(window.location.search);
+            const initialCategory = params.get('category') || 'all';
+            filterProducts(initialCategory, false);
 
-        categoryButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                filterProducts(button.dataset.category);
-            });
         });
-
-        const params = new URLSearchParams(window.location.search);
-        const initialCategory = params.get('category') || 'all';
-        filterProducts(initialCategory, false);
     </script>
 
 </body>
