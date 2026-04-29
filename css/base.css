@@ -500,3 +500,40 @@ button { font-family: inherit; cursor: pointer; }
     .footer-links-grid { grid-template-columns: 1fr; gap: 24px; }
     .footer-bottom { padding: 16px 14px 0; }
 }
+
+/* =========================================================
+   FIX — Mobile Drawer / Browser Zoom 150% Scroll
+========================================================= */
+
+.mobile-drawer {
+  max-height: calc(100vh - 68px);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+}
+
+.mobile-drawer-inner {
+  min-height: auto;
+  padding-bottom: 48px;
+}
+
+/* 平板 / 手機 header 高度不同時修正 */
+@media (max-width: 768px) {
+  .mobile-drawer {
+    max-height: calc(100vh - 56px);
+  }
+
+  .mobile-drawer-inner {
+    padding-bottom: 64px;
+  }
+}
+
+/* 避免放大時選單項目太高導致下方被吃掉 */
+.drawer-link,
+.drawer-dropdown-toggle {
+  flex-shrink: 0;
+}
+
+.drawer-submenu {
+  flex-shrink: 0;
+}
