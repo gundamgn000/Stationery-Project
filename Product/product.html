@@ -3,355 +3,317 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>所有文具 - Stationery Select</title>
+    <title>LOGO — 職人文具選品</title>
     <link rel="stylesheet" href="../css/base.css">
     <link rel="stylesheet" href="../css/product.css">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
-
 <body>
 
     <header class="header">
         <div class="header-container">
-            <div class="logo">Logo</div>
-
+            <div class="logo">
+                LOGO
+            </div>
             <button class="menu-toggle" id="menuToggle" aria-label="開啟選單" aria-expanded="false">
-                <span></span>
-                <span></span>
-                <span></span>
+                <span></span><span></span><span></span>
             </button>
-
             <nav class="nav-menu">
                 <a href="../index/index.html">首頁</a>
                 <a href="../about/about.html">品牌故事</a>
-
                 <div class="nav-dropdown">
                     <a href="product.html" class="nav-dropdown-trigger active">商品</a>
                     <div class="nav-dropdown-menu">
+                        <a href="product.html?category=all">所有文具</a>
+                        <a href="product.html?category=3c">書寫工具</a>
+                        <a href="product.html?category=smart-home">筆記本冊</a>
+                        <a href="product.html?category=lifestyle">桌面收納</a>
+                    </div>
+                </div>
+                <a href="#footer">聯絡我們</a>
+            </nav>
+            <div class="nav-icons">
+                <a href="#">🔍搜尋商品</a>
+                <a href="#">會員</a>
+                <a href="#" class="nav-icon-cart">🛒 購物車 (2)</a>
+            </div>
+        </div>
+        <div class="mobile-drawer" id="mobileDrawer">
+            <div class="mobile-drawer-inner">
+                <a href="../index/index.html" class="drawer-link">首頁</a>
+                <a href="../about/about.html" class="drawer-link">品牌故事</a>
+                <div class="drawer-dropdown">
+                    <button class="drawer-dropdown-toggle active" id="drawerDropdownToggle" type="button">
+                        商品分類 <span class="drawer-arrow">⌄</span>
+                    </button>
+                    <div class="drawer-submenu active" id="drawerSubmenu">
                         <a href="product.html?category=all" class="drawer-sublink">所有文具</a>
                         <a href="product.html?category=3c" class="drawer-sublink">書寫工具</a>
                         <a href="product.html?category=smart-home" class="drawer-sublink">筆記本冊</a>
                         <a href="product.html?category=lifestyle" class="drawer-sublink">桌面收納</a>
                     </div>
                 </div>
-
-                <a href="#footer">聯絡我們</a>
-            </nav>
-
-            <div class="nav-icons">
-                <a href="#">🔍 搜尋文具</a>
-                <a href="#">會員</a>
-                <a href="#">🛒購物車 (2)</a>
-            </div>
-        </div>
-
-        <div class="mobile-drawer" id="mobileDrawer">
-            <div class="mobile-drawer-inner">
-                <a href="../index/index.html" class="drawer-link">首頁</a>
-                <a href="../about/about.html" class="drawer-link">品牌故事</a>
-
-                <div class="drawer-dropdown">
-                    <button class="drawer-dropdown-toggle active" id="drawerDropdownToggle" type="button">
-                        商品分類
-                        <span class="drawer-arrow">⌄</span>
-                    </button>
-
-                    <div class="drawer-submenu active" id="drawerSubmenu">
-                        <a href="../Product/product.html?category=all" class="drawer-sublink">所有文具</a>
-                        <a href="../Product/product.html?category=3c" class="drawer-sublink">書寫工具</a>
-                        <a href="../Product/product.html?category=smart-home" class="drawer-sublink">筆記本冊</a>
-                        <a href="../Product/product.html?category=lifestyle" class="drawer-sublink">桌面收納</a>
-                    </div>
-                </div>
-
                 <a href="#footer" class="drawer-link">聯絡我們</a>
-
                 <div class="mobile-drawer-icons">
-                    <a href="#">🔍 搜尋文具</a>
+                    <a href="#">🔍 搜尋</a>
                     <a href="#">會員</a>
-                    <a href="#">🛒購物車 (2)</a>
+                    <a href="#">🛒 購物車 (2)</a>
                 </div>
             </div>
         </div>
     </header>
 
-    
-
-    <main class="product-layout product-layout--sidebar-left" id="productLayout">
-        
-        
-
-        <div class="product-main">
-            <section class="product-list-hero">
-                <div class="product-list-hero-content">
-                    <span class="product-list-kicker">ALL PRODUCTS</span>
-                    <h1>探索書寫與桌面的<br>質感選品</h1>
-                    <p>從行動裝置、筆記本冊到日常周邊，快速找到符合需求的人氣選品。</p>
+    <!-- Hero banner (dark) -->
+    <div class="product-list-hero">
+        <div class="product-hero-inner">
+            <div>
+                <div class="product-list-kicker">All Products</div>
+                <h1>探索書寫與桌面的<br><em>質感選品</em></h1>
+                <p>從筆記本冊、書寫工具到日常周邊，以清楚分類快速找到適合你的人氣選品。</p>
+            </div>
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <div class="hero-stat-num">8+</div>
+                    <div class="hero-stat-label">精選商品</div>
                 </div>
-            </section>
-
-            <section class="product-list-toolbar">
-                <div class="product-list-categories">
-                    <button class="category-chip active" type="button" data-category="all">所有文具</button>
-                    <button class="category-chip" type="button" data-category="3c">書寫工具</button>
-                    <button class="category-chip" type="button" data-category="smart-home">筆記本冊</button>
-                    <button class="category-chip" type="button" data-category="lifestyle">桌面收納</button>
-                    <button class="category-chip" type="button" data-category="hot">人氣選品</button>
+                <div class="hero-stat">
+                    <div class="hero-stat-num">4</div>
+                    <div class="hero-stat-label">商品分類</div>
                 </div>
-
-                <div class="product-list-meta">
-                    <span>共 8 項商品</span>
+                <div class="hero-stat">
+                    <div class="hero-stat-num">3–5</div>
+                    <div class="hero-stat-label">日出貨</div>
                 </div>
-            </section>
-
-            <section class="product-list-section">
-                <div class="product-list-grid">
-                    <a href="../product-detail/product-detail.html" class="list-product-card" data-category="3c">
-                        <div class="list-product-image">
-                            <img src="https://images.unsplash.com/photo-1531346878377-a5be20888e57?auto=format&fit=crop&q=80" alt="極簡硬殼筆記本">
-                        </div>
-                        <div class="list-product-body">
-                            <span class="list-product-tag">書寫工具</span>
-                            <h3>極簡硬殼筆記本</h3>
-                            <p>硬殼封面與細緻紙張，適合日常記錄與靈感草稿。</p>
-                            <div class="list-product-footer">
-                                <span class="list-product-price">NT$ 320</span>
-                                <span class="list-product-link">查看商品 &rarr;</span>
-                            </div>
-                        </div>
-                    </a>
-
-                    <a href="../product-detail/product-detail.html" class="list-product-card" data-category="3c">
-                        <div class="list-product-image">
-                            <img src="https://images.unsplash.com/photo-1456735190827-d1262f71b8a3?auto=format&fit=crop&q=80&w=400" alt="霧面中性筆組">
-                        </div>
-                        <div class="list-product-body">
-                            <span class="list-product-tag">書寫工具</span>
-                            <h3>霧面中性筆組</h3>
-                            <p>穩定出墨與舒適握感，讓長時間書寫更順手。</p>
-                            <div class="list-product-footer">
-                                <span class="list-product-price">NT$ 180</span>
-                                <span class="list-product-link">查看商品 &rarr;</span>
-                            </div>
-                        </div>
-                    </a>
-
-                    <a href="../product-detail/product-detail.html" class="list-product-card" data-category="smart-home">
-                        <div class="list-product-image">
-                            <img src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&q=80" alt="橫線筆記補充本">
-                        </div>
-                        <div class="list-product-body">
-                            <span class="list-product-tag">筆記本冊</span>
-                            <h3>橫線筆記補充本</h3>
-                            <p>簡潔內頁配置，適合會議紀錄、課堂筆記與日常備忘。</p>
-                            <div class="list-product-footer">
-                                <span class="list-product-price">NT$ 260</span>
-                                <span class="list-product-link">查看商品 &rarr;</span>
-                            </div>
-                        </div>
-                    </a>
-
-                    <a href="../product-detail/product-detail.html" class="list-product-card" data-category="smart-home">
-                        <div class="list-product-image">
-                            <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&q=80" alt="木質筆筒收納">
-                        </div>
-                        <div class="list-product-body">
-                            <span class="list-product-tag">筆記本冊</span>
-                            <h3>木質筆筒收納</h3>
-                            <p>以溫潤木質整理常用筆具，讓桌面維持乾淨秩序。</p>
-                            <div class="list-product-footer">
-                                <span class="list-product-price">NT$ 520</span>
-                                <span class="list-product-link">查看商品 &rarr;</span>
-                            </div>
-                        </div>
-                    </a>
-
-                    <a href="../product-detail/product-detail.html" class="list-product-card" data-category="lifestyle">
-                        <div class="list-product-image">
-                            <img src="https://images.unsplash.com/photo-1518455027359-f3f8164ba6bd?auto=format&fit=crop&q=80" alt="桌面收納托盤">
-                        </div>
-                        <div class="list-product-body">
-                            <span class="list-product-tag">桌面收納</span>
-                            <h3>桌面收納托盤</h3>
-                            <p>適合放置便利貼、迴紋針與常用小物，讓工作區更清爽。</p>
-                            <div class="list-product-footer">
-                                <span class="list-product-price">NT$ 680</span>
-                                <span class="list-product-link">查看商品 &rarr;</span>
-                            </div>
-                        </div>
-                    </a>
-
-                    <a href="../product-detail/product-detail.html" class="list-product-card" data-category="lifestyle">
-                        <div class="list-product-image">
-                            <img src="https://images.unsplash.com/photo-1510070009289-b5bc34383727?auto=format&fit=crop&q=80" alt="便攜筆袋">
-                        </div>
-                        <div class="list-product-body">
-                            <span class="list-product-tag">桌面收納</span>
-                            <h3>便攜筆袋</h3>
-                            <p>輕巧容量與耐用材質，適合通勤、上課與外出使用。</p>
-                            <div class="list-product-footer">
-                                <span class="list-product-price">NT$ 390</span>
-                                <span class="list-product-link">查看商品 &rarr;</span>
-                            </div>
-                        </div>
-                    </a>
-
-                    <a href="../product-detail/product-detail.html" class="list-product-card" data-category="hot">
-                        <div class="list-product-image">
-                            <img src="https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?auto=format&fit=crop&q=80" alt="週計畫手帳本">
-                        </div>
-                        <div class="list-product-body">
-                            <span class="list-product-tag">人氣選品</span>
-                            <h3>週計畫手帳本</h3>
-                            <p>以週計畫格式安排任務，讓工作節奏更清楚。</p>
-                            <div class="list-product-footer">
-                                <span class="list-product-price">NT$ 420</span>
-                                <span class="list-product-link">查看商品 &rarr;</span>
-                            </div>
-                        </div>
-                    </a>
-
-                    <a href="../product-detail/product-detail.html" class="list-product-card" data-category="hot">
-                        <div class="list-product-image">
-                            <img src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&q=80" alt="活頁資料夾">
-                        </div>
-                        <div class="list-product-body">
-                            <span class="list-product-tag">人氣選品</span>
-                            <h3>活頁資料夾</h3>
-                            <p>可彈性整理文件、講義與靈感資料，分類更有效率。</p>
-                            <div class="list-product-footer">
-                                <span class="list-product-price">NT$ 360</span>
-                                <span class="list-product-link">查看商品 &rarr;</span>
-                            </div>
-                        </div>
-                    </a>
+                <div class="hero-stat">
+                    <div class="hero-stat-num">100%</div>
+                    <div class="hero-stat-label">嚴選品質</div>
                 </div>
-
-                <div class="pagination">
-                    <a href="#" class="page-arrow disabled">&larr;</a>
-                    <a href="#" class="page-number active">1</a>
-                    <a href="#" class="page-number">2</a>
-                    <a href="#" class="page-number">3</a>
-                    <a href="#" class="page-arrow">&rarr;</a>
-                </div>
-            </section>
+            </div>
         </div>
-    </main>
+    </div>
+
+    <!-- Filter toolbar -->
+    <div class="product-toolbar">
+        <div class="product-categories">
+            <button class="category-chip active" data-category="all">所有文具</button>
+            <button class="category-chip" data-category="3c">書寫工具</button>
+            <button class="category-chip" data-category="smart-home">筆記本冊</button>
+            <button class="category-chip" data-category="lifestyle">桌面收納</button>
+            <button class="category-chip" data-category="hot">人氣選品</button>
+        </div>
+        <div class="product-list-meta"><span>共 8 項商品</span></div>
+    </div>
+
+    <!-- Product grid -->
+    <div class="product-grid-wrapper">
+        <div class="product-list-grid">
+
+            <a href="../product-detail/product-detail.html" class="list-product-card" data-category="3c">
+                <div class="list-product-image">
+                    <img src="https://images.unsplash.com/photo-1531346878377-a5be20888e57?auto=format&fit=crop&q=80" alt="極簡硬殼筆記本">
+                </div>
+                <div class="list-product-body">
+                    <span class="list-product-tag">書寫工具</span>
+                    <h3>極簡硬殼筆記本</h3>
+                    <p>硬殼封面與細緻紙張，適合日常記錄與靈感草稿。</p>
+                    <div class="list-product-footer">
+                        <span class="list-product-price">NT$ 320</span>
+                        <span class="list-product-link">查看商品 →</span>
+                    </div>
+                </div>
+            </a>
+
+            <a href="../product-detail/product-detail.html" class="list-product-card" data-category="3c">
+                <div class="list-product-image">
+                    <img src="https://images.unsplash.com/photo-1456735190827-d1262f71b8a3?auto=format&fit=crop&q=80&w=400" alt="霧面中性筆組">
+                </div>
+                <div class="list-product-body">
+                    <span class="list-product-tag">書寫工具</span>
+                    <h3>霧面中性筆組</h3>
+                    <p>穩定出墨與舒適握感，讓長時間書寫更順手。</p>
+                    <div class="list-product-footer">
+                        <span class="list-product-price">NT$ 180</span>
+                        <span class="list-product-link">查看商品 →</span>
+                    </div>
+                </div>
+            </a>
+
+            <a href="../product-detail/product-detail.html" class="list-product-card" data-category="smart-home">
+                <div class="list-product-image">
+                    <img src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&q=80" alt="橫線筆記補充本">
+                </div>
+                <div class="list-product-body">
+                    <span class="list-product-tag">筆記本冊</span>
+                    <h3>橫線筆記補充本</h3>
+                    <p>簡潔內頁配置，適合會議紀錄、課堂筆記與日常備忘。</p>
+                    <div class="list-product-footer">
+                        <span class="list-product-price">NT$ 260</span>
+                        <span class="list-product-link">查看商品 →</span>
+                    </div>
+                </div>
+            </a>
+
+            <a href="../product-detail/product-detail.html" class="list-product-card" data-category="smart-home">
+                <div class="list-product-image">
+                    <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&q=80" alt="木質筆筒收納">
+                </div>
+                <div class="list-product-body">
+                    <span class="list-product-tag">筆記本冊</span>
+                    <h3>木質筆筒收納</h3>
+                    <p>以溫潤木質整理常用筆具，讓桌面維持乾淨秩序。</p>
+                    <div class="list-product-footer">
+                        <span class="list-product-price">NT$ 520</span>
+                        <span class="list-product-link">查看商品 →</span>
+                    </div>
+                </div>
+            </a>
+
+            <a href="../product-detail/product-detail.html" class="list-product-card" data-category="lifestyle">
+                <div class="list-product-image">
+                    <img src="https://images.unsplash.com/photo-1518455027359-f3f8164ba6bd?auto=format&fit=crop&q=80" alt="桌面收納托盤">
+                </div>
+                <div class="list-product-body">
+                    <span class="list-product-tag">桌面收納</span>
+                    <h3>桌面收納托盤</h3>
+                    <p>收納便利貼、迴紋針與常用小物，讓工作區更清爽。</p>
+                    <div class="list-product-footer">
+                        <span class="list-product-price">NT$ 680</span>
+                        <span class="list-product-link">查看商品 →</span>
+                    </div>
+                </div>
+            </a>
+
+            <a href="../product-detail/product-detail.html" class="list-product-card" data-category="lifestyle">
+                <div class="list-product-image">
+                    <img src="https://images.unsplash.com/photo-1510070009289-b5bc34383727?auto=format&fit=crop&q=80" alt="便攜筆袋">
+                </div>
+                <div class="list-product-body">
+                    <span class="list-product-tag">桌面收納</span>
+                    <h3>便攜筆袋</h3>
+                    <p>輕巧容量與耐用材質，適合通勤、上課與外出使用。</p>
+                    <div class="list-product-footer">
+                        <span class="list-product-price">NT$ 390</span>
+                        <span class="list-product-link">查看商品 →</span>
+                    </div>
+                </div>
+            </a>
+
+            <a href="../product-detail/product-detail.html" class="list-product-card" data-category="hot">
+                <div class="list-product-image">
+                    <img src="https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?auto=format&fit=crop&q=80" alt="週計畫手帳本">
+                </div>
+                <div class="list-product-body">
+                    <span class="list-product-tag">人氣選品</span>
+                    <h3>週計畫手帳本</h3>
+                    <p>以週計畫格式安排任務，讓工作節奏更清楚。</p>
+                    <div class="list-product-footer">
+                        <span class="list-product-price">NT$ 420</span>
+                        <span class="list-product-link">查看商品 →</span>
+                    </div>
+                </div>
+            </a>
+
+            <a href="../product-detail/product-detail.html" class="list-product-card" data-category="hot">
+                <div class="list-product-image">
+                    <img src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&q=80" alt="活頁資料夾">
+                </div>
+                <div class="list-product-body">
+                    <span class="list-product-tag">人氣選品</span>
+                    <h3>活頁資料夾</h3>
+                    <p>可彈性整理文件、講義與靈感資料，分類更有效率。</p>
+                    <div class="list-product-footer">
+                        <span class="list-product-price">NT$ 360</span>
+                        <span class="list-product-link">查看商品 →</span>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="pagination">
+            <a href="#" class="page-arrow disabled">←</a>
+            <a href="#" class="page-number active">1</a>
+            <a href="#" class="page-number">2</a>
+            <a href="#" class="page-number">3</a>
+            <a href="#" class="page-arrow">→</a>
+        </div>
+    </div>
 
     <footer id="footer" class="footer-main">
         <div class="footer-top-container">
             <div class="footer-logo-box">
-                <div class="footer-logo-square">Logo</div>
+                <div class="footer-brand-name">Stationery<br>Select</div>
+                <div class="footer-brand-en">Since 2020</div>
+                <p class="footer-logo-desc">精選實用且具有設計感的文具用品，從書寫、記錄到桌面整理，陪你建立更有秩序的日常。</p>
             </div>
-
             <div class="footer-links-grid">
                 <div class="footer-column">
-                    <h4>Stationery Select</h4>
-                    <p>精選實用且具有設計感的文具用品，從書寫、記錄到桌面整理，陪你建立更有秩序的日常。</p>
-                </div>
-
-                <div class="footer-column">
-                    <h4>快速連結</h4>
+                    <h4>Quick Links</h4>
                     <ul>
                         <li><a href="../index/index.html">首頁</a></li>
-                        <li><a href="../about/about.html">關於我們</a></li>
-                        <li><a href="product.html?category=all">所有文具</a></li>
+                        <li><a href="../about/about.html">品牌故事</a></li>
+                        <li><a href="product.html">所有文具</a></li>
                     </ul>
                 </div>
-
                 <div class="footer-column">
-                    <h4>社群</h4>
+                    <h4>Community</h4>
                     <ul>
                         <li><a href="#">Instagram</a></li>
                         <li><a href="#">Line</a></li>
                         <li><a href="#">Facebook</a></li>
                     </ul>
                 </div>
-
                 <div class="footer-column">
-                    <h4>客服資訊</h4>
-                    <p>Email: service@email.com</p>
-                    <p>電話: 02-1234-5678</p>
-                    <p>服務時間: 09:00 - 18:00</p>
+                    <h4>Contact</h4>
+                    <p>service@email.com</p>
+                    <p>02-1234-5678</p>
+                    <p>09:00 – 18:00</p>
                 </div>
             </div>
         </div>
-
         <div class="footer-bottom">
-            © 2026 Stationery Select. All rights reserved.
+            <span>© 2026 Stationery Select. All rights reserved.</span>
+            <span>Designed with care · 職人の心</span>
         </div>
     </footer>
 
     <script>
-        const menuToggle = document.getElementById('menuToggle');
-        const mobileDrawer = document.getElementById('mobileDrawer');
-        const drawerDropdownToggle = document.getElementById('drawerDropdownToggle');
-        const drawerSubmenu = document.getElementById('drawerSubmenu');
+    const menuToggle = document.getElementById('menuToggle');
+    const mobileDrawer = document.getElementById('mobileDrawer');
+    const drawerDropdownToggle = document.getElementById('drawerDropdownToggle');
+    const drawerSubmenu = document.getElementById('drawerSubmenu');
+    menuToggle.addEventListener('click', () => {
+        menuToggle.classList.toggle('active');
+        mobileDrawer.classList.toggle('active');
+        menuToggle.setAttribute('aria-expanded', menuToggle.classList.contains('active'));
+    });
+    drawerDropdownToggle.addEventListener('click', () => {
+        drawerDropdownToggle.classList.toggle('active');
+        drawerSubmenu.classList.toggle('active');
+    });
 
-        menuToggle.addEventListener('click', () => {
-            menuToggle.classList.toggle('active');
-            mobileDrawer.classList.toggle('active');
+    // Filter
+    const categoryButtons = document.querySelectorAll('.category-chip');
+    const productCards = document.querySelectorAll('.list-product-card');
+    const productCount = document.querySelector('.product-list-meta span');
 
-            const isExpanded = menuToggle.classList.contains('active');
-            menuToggle.setAttribute('aria-expanded', isExpanded ? 'true' : 'false');
+    function filterProducts(category, updateUrl = true) {
+        let count = 0;
+        productCards.forEach(card => {
+            const show = category === 'all' || card.dataset.category === category;
+            card.style.display = show ? 'block' : 'none';
+            if (show) count++;
         });
+        if (productCount) productCount.textContent = `共 ${count} 項商品`;
+        categoryButtons.forEach(b => b.classList.toggle('active', b.dataset.category === category));
+        if (updateUrl) {
+            const url = new URL(window.location.href);
+            url.searchParams.set('category', category);
+            window.history.replaceState({}, '', url);
+        }
+    }
 
-        drawerDropdownToggle.addEventListener('click', () => {
-            drawerDropdownToggle.classList.toggle('active');
-            drawerSubmenu.classList.toggle('active');
-        });
-
-        document.addEventListener('DOMContentLoaded', function () {
-
-            const categoryButtons = document.querySelectorAll('.category-chip');
-            const productCards = document.querySelectorAll('.list-product-card');
-            const productCount = document.querySelector('.product-list-meta span');
-
-            function normalizeCategory(category) {
-                return category && category.trim() ? category : 'all';
-            }
-
-            function filterProducts(category, updateUrl = true) {
-                const currentCategory = normalizeCategory(category);
-                let visibleCount = 0;
-
-                productCards.forEach(card => {
-                    const cardCategory = card.dataset.category;
-                    if (currentCategory === 'all' || cardCategory === currentCategory) {
-                        card.style.display = 'block';
-                        visibleCount++;
-                    } else {
-                        card.style.display = 'none';
-                    }
-                });
-
-                if (productCount) {
-                    productCount.textContent = `共 ${visibleCount} 項商品`;
-                }
-
-                categoryButtons.forEach(button => {
-                    button.classList.toggle('active', button.dataset.category === currentCategory);
-                });
-
-                if (updateUrl) {
-                    const url = new URL(window.location.href);
-                    url.searchParams.set('category', currentCategory);
-                    window.history.replaceState({}, '', url);
-                }
-            }
-
-            categoryButtons.forEach(button => {
-                button.addEventListener('click', () => {
-                    filterProducts(button.dataset.category);
-                });
-            });
-
-            const params = new URLSearchParams(window.location.search);
-            const initialCategory = params.get('category') || 'all';
-            filterProducts(initialCategory, false);
-
-        });
+    categoryButtons.forEach(btn => btn.addEventListener('click', () => filterProducts(btn.dataset.category)));
+    const params = new URLSearchParams(window.location.search);
+    filterProducts(params.get('category') || 'all', false);
     </script>
-
 </body>
 </html>
