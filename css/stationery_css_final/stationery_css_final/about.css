@@ -1,0 +1,470 @@
+/* ═══════════════════════════════════════════════
+   about.css — Stationery Select 品牌故事頁
+   Hero、Gallery、Brand Values、Detail Section
+   ═══════════════════════════════════════════════ */
+
+.about-page {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+
+/* ═══════════════════════════════════════════════
+   ABOUT HERO
+   ═══════════════════════════════════════════════ */
+.about-hero {
+  padding: var(--space-2xl) var(--space-xl) 0;
+}
+
+.about-hero-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-2xl);
+  align-items: center;
+  margin-bottom: var(--space-2xl);
+}
+
+.about-hero-image {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  aspect-ratio: 4/3;
+  position: relative;
+}
+
+.about-hero-image::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(28,26,23,0.08);
+  pointer-events: none;
+}
+
+.about-hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s var(--ease-out);
+}
+
+.about-hero-image:hover img {
+  transform: scale(1.04);
+}
+
+.about-hero-text {
+  padding: var(--space-lg) 0;
+}
+
+.about-subtitle {
+  display: inline-block;
+  font-size: 0.6875rem;
+  letter-spacing: 0.16em;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: var(--color-ink-xlight);
+  margin-bottom: var(--space-lg);
+  position: relative;
+  padding-left: var(--space-md);
+}
+
+.about-subtitle::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 6px;
+  height: 1px;
+  background: var(--color-ink-xlight);
+}
+
+.about-hero-text h1 {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  font-weight: 400;
+  line-height: 1.35;
+  color: var(--color-ink);
+  margin-bottom: var(--space-lg);
+  letter-spacing: -0.01em;
+}
+
+.about-hero-text p {
+  font-size: 0.9375rem;
+  color: var(--color-ink-light);
+  line-height: 1.85;
+}
+
+
+/* ═══════════════════════════════════════════════
+   STORY GALLERY
+   ═══════════════════════════════════════════════ */
+.about-story-gallery {
+  background: var(--color-ink);
+  padding: var(--space-xl) var(--space-xl);
+  position: relative;
+}
+
+.about-story-gallery::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(247,244,239,0.2), transparent);
+}
+
+.about-story-gallery-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: var(--space-md);
+}
+
+.story-gallery-item {
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  aspect-ratio: 4/3;
+  position: relative;
+}
+
+.story-gallery-item.large {
+  aspect-ratio: 16/9;
+}
+
+.story-gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.85;
+  transition: opacity var(--transition), transform 0.7s var(--ease-out);
+  filter: grayscale(15%);
+}
+
+.story-gallery-item:hover img {
+  opacity: 1;
+  transform: scale(1.04);
+  filter: grayscale(0%);
+}
+
+
+/* ═══════════════════════════════════════════════
+   BRAND VALUES
+   ═══════════════════════════════════════════════ */
+.brand-values {
+  padding: var(--space-2xl) var(--space-xl);
+}
+
+.brand-values .section-title {
+  text-align: left;
+  padding: 0 0 var(--space-xl);
+}
+
+.brand-values .section-title h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+  font-weight: 400;
+  color: var(--color-ink);
+  margin-bottom: var(--space-xs);
+}
+
+.brand-values .section-title p {
+  font-size: 0.75rem;
+  color: var(--color-ink-xlight);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-align: left;
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-lg);
+}
+
+.value-item {
+  padding: var(--space-xl) var(--space-xl);
+  background: var(--color-surface);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-md);
+  position: relative;
+  transition: box-shadow var(--transition), transform var(--transition);
+}
+
+.value-item:hover {
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-3px);
+}
+
+.value-num {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--color-line);
+  line-height: 1;
+  margin-bottom: var(--space-md);
+  letter-spacing: -0.02em;
+  transition: color var(--transition);
+}
+
+.value-item:hover .value-num {
+  color: var(--color-ink-xlight);
+}
+
+.value-item h3 {
+  font-family: var(--font-display);
+  font-size: 1.0625rem;
+  font-weight: 400;
+  color: var(--color-ink);
+  margin-bottom: var(--space-sm);
+}
+
+.value-item p {
+  font-size: 0.875rem;
+  color: var(--color-ink-light);
+  line-height: 1.8;
+}
+
+
+/* ═══════════════════════════════════════════════
+   ABOUT DETAIL
+   ═══════════════════════════════════════════════ */
+.about-detail {
+  padding: 0 var(--space-xl) var(--space-2xl);
+}
+
+.detail-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-2xl);
+  align-items: center;
+  background: var(--color-surface);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.detail-img {
+  aspect-ratio: 4/3;
+  overflow: hidden;
+}
+
+.detail-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s var(--ease-out);
+}
+
+.detail-row:hover .detail-img img {
+  transform: scale(1.04);
+}
+
+.detail-content {
+  padding: var(--space-2xl) var(--space-xl) var(--space-2xl) 0;
+}
+
+.detail-content h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.25rem, 2vw, 1.625rem);
+  font-weight: 400;
+  line-height: 1.4;
+  color: var(--color-ink);
+  margin-bottom: var(--space-lg);
+  letter-spacing: -0.01em;
+}
+
+.detail-content p {
+  font-size: 0.9375rem;
+  color: var(--color-ink-light);
+  line-height: 1.85;
+}
+
+
+/* ═══════════════════════════════════════════════
+   RWD
+   ═══════════════════════════════════════════════ */
+@media (max-width: 1024px) {
+  .about-hero { padding: var(--space-xl) var(--space-lg) 0; }
+  .about-story-gallery { padding: var(--space-lg); }
+  .brand-values { padding: var(--space-xl) var(--space-lg); }
+  .about-detail { padding: 0 var(--space-lg) var(--space-xl); }
+
+  .values-grid { grid-template-columns: repeat(2, 1fr); gap: var(--space-md); }
+}
+
+@media (max-width: 768px) {
+  .about-hero { padding: var(--space-lg) var(--space-md) 0; }
+
+  .about-hero-container {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+    margin-bottom: var(--space-xl);
+  }
+
+  .about-story-gallery { padding: var(--space-md); }
+  .about-story-gallery-container {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+  }
+  .story-gallery-item.large {
+    grid-column: 1 / -1;
+  }
+
+  .brand-values { padding: var(--space-xl) var(--space-md); }
+  .values-grid { grid-template-columns: 1fr; }
+
+  .about-detail { padding: 0 var(--space-md) var(--space-xl); }
+  .detail-row {
+    grid-template-columns: 1fr;
+  }
+  .detail-content {
+    padding: var(--space-lg) var(--space-lg) var(--space-xl);
+  }
+}
+
+@media (max-width: 480px) {
+  .about-story-gallery-container {
+    grid-template-columns: 1fr;
+  }
+  .story-gallery-item.large { grid-column: 1; }
+}
+
+/* =========================================================
+   about.css — Stationery Select Final Override
+   品牌故事：文具選品感 / 紙感敘事 / 輕量深綠區塊
+========================================================= */
+
+.about-hero {
+  padding-top: 72px;
+}
+
+.about-hero-container {
+  background:
+    radial-gradient(circle at 10% 12%, rgba(107, 124, 106, 0.1), transparent 28%),
+    linear-gradient(135deg, #fffdf8 0%, #f1efe9 100%);
+  border: 1px solid var(--color-line);
+  border-radius: 24px;
+  padding: 32px;
+}
+
+.about-hero-image {
+  border-radius: 18px;
+  box-shadow: none;
+}
+
+.about-hero-image::after {
+  border-color: rgba(107, 124, 106, 0.18);
+}
+
+.about-hero-image img {
+  filter: saturate(0.86) contrast(0.96) brightness(1.04);
+}
+
+.about-subtitle {
+  color: var(--color-primary-dark);
+}
+
+.about-subtitle::before {
+  background: var(--color-primary);
+}
+
+.about-hero-text h1 {
+  color: var(--color-ink);
+  letter-spacing: 0.02em;
+}
+
+.about-hero-text p {
+  color: var(--color-ink-light);
+}
+
+.about-story-gallery {
+  background: #3f463d;
+  border-radius: 24px;
+  margin-top: 32px;
+}
+
+.about-story-gallery::before {
+  background: linear-gradient(90deg, transparent, rgba(255, 253, 248, 0.25), transparent);
+}
+
+.story-gallery-item {
+  border-radius: 16px;
+}
+
+.story-gallery-item img {
+  opacity: 0.92;
+  filter: saturate(0.82) contrast(0.96) brightness(1.02);
+}
+
+.story-gallery-item:hover img {
+  opacity: 1;
+  filter: saturate(0.9) contrast(0.98) brightness(1.04);
+}
+
+.brand-values .section-title h2,
+.detail-content h2 {
+  color: var(--color-ink);
+  letter-spacing: 0.04em;
+}
+
+.brand-values .section-title p {
+  color: var(--color-primary-dark);
+}
+
+.value-item {
+  border-radius: 18px;
+  background: #fffdf8;
+  box-shadow: none;
+}
+
+.value-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(43, 43, 43, 0.07);
+  border-color: rgba(107, 124, 106, 0.42);
+}
+
+.value-num {
+  color: rgba(107, 124, 106, 0.24);
+}
+
+.value-item:hover .value-num {
+  color: var(--color-primary-dark);
+}
+
+.value-item h3 {
+  color: var(--color-primary-dark);
+}
+
+.detail-row {
+  background: #fffdf8;
+  border-radius: 24px;
+  box-shadow: none;
+}
+
+.detail-img img {
+  filter: saturate(0.86) contrast(0.96) brightness(1.04);
+}
+
+@media (max-width: 768px) {
+  .about-hero {
+    padding-top: 24px;
+  }
+
+  .about-hero-container {
+    padding: 18px;
+    border-radius: 18px;
+  }
+
+  .about-story-gallery {
+    border-radius: 18px;
+    margin-top: 24px;
+  }
+
+  .detail-row {
+    border-radius: 18px;
+  }
+}
